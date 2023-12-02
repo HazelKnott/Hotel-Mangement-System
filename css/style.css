@@ -1,0 +1,37 @@
+*{
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+}
+.navbar-brand{
+    margin-left: 5px;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.facility-icons{
+    width: 100px;
+    height: 100px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.availability-form{
+    margin-top: -50px;
+    z-index: 2;
+}
+
+/* .h-line{
+    width: 10px;
+    margin: 0 -50px;
+    height: 1.7px;
+} */

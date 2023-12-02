@@ -1,0 +1,31 @@
+Hotel Management
+    User:
+        *  Homepage 
+        *  Book Hotel Rooms
+        *  Manage Booking Cancel or Modify
+        *  Give User and Rating (Onhold)
+    Admin:
+        * Room Management - add/ modify
+        * Manage User
+        * Booking Management
+            * Arrival Status
+            * Check out Status
+            * Finalize Booking
+            * Generate Invoice
+        * Add, modify, delete features
+        * Add, modify, delete service 
+        * review $ rating Management
+    Front_End:
+        Main Pages 
+            (Homepage, 
+            Rooms, 
+            Facilities, 
+            Contact Us)
+        Additional Pages
+        (My acct, Check out, Search result)
+    Admin_End:
+        Main Pages
+        (Rooms,
+         Users,
+        Booking,
+        review and ratings)
