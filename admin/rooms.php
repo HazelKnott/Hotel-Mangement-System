@@ -154,7 +154,7 @@
 		
 		
 		let xhr = new XMLHttpRequest();
-		xhr.open("POST", "ajax/rooms.php", true)
+		xhr.open("POST", "ajax/rooms.php", true);
 
 		xhr.onload = function(){
 			var myModal = document.getElementById('add-room');
@@ -176,20 +176,18 @@
 		xhr.send(data);
 	}
 
-	function get_all_rooms
-	(
-
-
+	function get_all_rooms()
+	{
 		let xhr = new XMLHttpRequest();
 		xhr.open("POST", "ajax/rooms.php", true);
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		xhr.onload = function(){
 			document.getElementId('room-data').innerHTML = this.responseText;
 		}
 
 		xhr.send('get_all_rooms');
-	)
+	}
 
 		windows.onload = function()
 		{
