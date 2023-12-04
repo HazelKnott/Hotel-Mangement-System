@@ -269,8 +269,8 @@
             <i class="bi bi-telephone-fill"> </i>Call Us
           </h5>
           <a href="#" class="d-inline-block mb-2 text-decoration-none text-dark">09234567890</a>
-        </div>
-        <div class="bg-white p-4 rounded mb-4 border border-dark">
+         </div>
+         <div class="bg-white p-4 rounded mb-4 border border-dark">
           <h5>Follow Us</h5>
           <a href="#" class="d-inline-block mb-3">
             <span class="badge bg-light text-dark fs-6 p-2">
