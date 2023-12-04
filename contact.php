@@ -23,7 +23,7 @@
       </p>
 </div>
      
-       <div class="container"></div>
+      <div class="container-md">100% wide until medium breakpoint</div>
        <div class="col-lg-6 col-md-6 ab-5 px-4"></div>
        <div class=" bg-white rounded shadow p-4"></div>
        <iframe class="w-100 rounded mb-4" height="350px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.2563839613304!2d121.0309099!3d14.754580400000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1cc9c9c83e9%3A0x303a03298da24ddb!2sUniversity%20of%20Caloocan%20City%20-%20Congressional%20Campus!5e0!3m2!1sen!2sph!4v1701334532767!5m2!1sen!2sph" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
