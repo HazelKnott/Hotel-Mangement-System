@@ -3,7 +3,7 @@
     $hname = 'localhost';
     $uname = 'root';
     $pass = '';
-    $db = "our_hotel";
+    $db = "tranquil_hotel";
 
     $con = mysqli_connect($hname,$uname,$pass,$db);
 
