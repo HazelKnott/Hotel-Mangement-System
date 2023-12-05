@@ -183,7 +183,7 @@
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		xhr.onload = function(){
-			document.getElementId('room-data').innerHTML = this.responseText;
+			document.getElementById('room-data').innerHTML = this.responseText;
 		}
 
 		xhr.send('get_all_rooms');
