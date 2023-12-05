@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-2 shadow-sm sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Tranquil Hotel</a>
+    <a class="navbar-brand" href="index.php">Tranquil Hotel</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,10 +22,10 @@
             <a class="nav-link p-2 bd-highlight me-3" href="about.php">About Us</a>
           </li>
         </ul>
-        <button type="button" class="btn btn-primary ms-auto p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <button type="button" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">
           LOGIN
         </button>
-        <button type="button" class="btn btn-primary ms-2 p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#registerModal">
+        <button type="button" class="btn btn-light btn-sm ms-2 p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#registerModal">
           REGISTER
         </button>
     </div>
