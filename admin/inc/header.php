@@ -22,7 +22,7 @@
                             <a class="nav-link text-light" href="#">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Settings</a>
+                            <a class="nav-link text-light" href="settings.php">Settings</a>
                         </li>
                     </ul>
                 </div>
