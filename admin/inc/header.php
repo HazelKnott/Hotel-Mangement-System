@@ -19,7 +19,7 @@
                             <a class="nav-link text-light" href="rooms.php">Rooms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Users</a>
+                            <a class="nav-link text-light" href="users.php">Users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="settings.php">Settings</a>

@@ -20,7 +20,36 @@
 		<div class="container-fluid" id="main-content">
 			<div class="row">
 				<div class="col-lg-10 ms-auto p-4 overflow-hidden">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae expedita aspernatur nesciunt. Consectetur voluptates esse vitae iure labore cum natus rem quo assumenda nemo, voluptate explicabo adipisci provident fuga placeat vero delectus optio alias repudiandae dignissimos quas voluptatibus! Molestiae fugit laborum cum incidunt, eveniet sit quaerat unde esse eos nam fuga impedit in omnis modi mollitia ea nobis debitis, quas minus, magni veritatis accusantium officia quo! Necessitatibus iste voluptatem, nam repellat quos illo qui dolores sunt libero aperiam minima! Iure rerum reiciendis cum ullam. Consequuntur alias quod corrupti voluptates reprehenderit voluptate ipsum eaque quos! Fuga soluta iusto alias perspiciatis. Et provident deleniti est fuga iure perferendis voluptatum saepe beatae soluta quas atque temporibus ut, consequatur autem quos veniam? Excepturi ut rem reprehenderit possimus, molestiae error similique non magni, nisi natus ratione exercitationem, eos corporis obcaecati dignissimos dicta voluptate totam alias? Neque nulla commodi illo, non magni voluptatibus minus doloribus itaque ipsum veniam aut maxime quos, aperiam consectetur quisquam nemo esse odio ducimus vitae facilis ipsam! Asperiores nesciunt quaerat qui beatae ad consequatur, quasi aut maiores possimus iste, excepturi non sed voluptas reiciendis, ex optio at quibusdam similique perspiciatis cum atque. Fuga totam, consectetur illo repellat a odio distinctio numquam recusandae.
+					<div class="d-flex align-items-center justify-content-between mb-4">
+						<h3>DASHBOARD</h3>
+						<h6 class="badge bg-danger py-2 px-3">Shutdown mode is Active</h6>
+					</div>
+					<div class="row justify-content-evenly">
+						<div class="col-md-3 mb-4">
+							<a href="" class="text-decoration-none">
+								<div class="card text-center text-success p-3">
+									<h6>New Bookings</h6>
+									<h1 class="mt-2 mb-0">0</h1>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 mb-4">
+							<a href="" class="text-decoration-none">
+								<div class="card text-center text-warning p-3">
+									<h6>Refund Bookings</h6>
+									<h1 class="mt-2 mb-0">0</h1>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3 mb-4">
+							<a href="" class="text-decoration-none">
+								<div class="card text-center text-info p-3">
+									<h6>User Queries</h6>
+									<h1 class="mt-2 mb-0">0</h1>
+								</div>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
