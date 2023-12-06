@@ -4,8 +4,10 @@
       <div class="col-lg-4 p-4">
         <h3 class="fw-bold fs-3 mb-2">Our Hotel</h3>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel quo dolorem laudantium vero, eaque aspernatur non quam cupiditate id neque perspiciatis error reprehenderit consequatur consequuntur fugiat, molestias, facilis dolores rem!
-        </p>
+        Our tranquil hotel will ensure you that not only will you be able to stay here comfortably but also enjoy the quality of our hotel examples, our gym, sauna pool, and so on. 
+        Our Trnaquil Hotel will give you heaven not only the rooms but also our services. Tranquil Hotel will wait for you!
+</p>
+
       </div>
       <div class="col-lg-4 p-4">
         <h5 class="mb-3">Links</h5>
