@@ -38,7 +38,7 @@
   <button type="button"></button>
 </div>
 
-<script>
+<!-- <script>
 
   function alert(type,msg,position='body')
   {
@@ -118,4 +118,4 @@
 
     xhr.send(data);
   })
-</script>
+</script> -->
