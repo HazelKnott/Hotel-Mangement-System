@@ -25,7 +25,7 @@
     <h2 class="fw-bold text-center text-decoration-underline">Our Facilities</h2>
     <!-- <div class="border-bottom border-dark h-line"></div> -->
     <p class="text-center mt-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est quidem enim ducimus doloremque quaerat error mollitia, itaque veniam, perspiciatis, dicta quam at ratione! Voluptates vel quasi laborum nesciunt. Voluptate, accusamus, quis facilis obcaecati laborum fugit vitae cupiditate dolor vel repellendus molestiae qui tempore nihil voluptatibus? Placeat optio pariatur minus.
+    Greetings from Tranquila Hotel! We are thrilled to welcome you to an exceptional stay where your comfort and satisfaction are our top priorities. Our world-class facilities have been thoughtfully designed to enhance every aspect of your experience with us.
     </p>
   </div>
 
@@ -35,10 +35,43 @@
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
             <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Wifi</h5>
+            <h5 class="ms-3">Complimentary Wi-fi internet throughout the entaire hotel</h5>
           </div>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda. Eligendi nobis amet molestias adipisci non nihil harum odit veritatis?
+          That's why we are pleased to offer complimentary Wi-Fi internet access throughout the entire hotel, ensuring you can effortlessly stay in touch and make the most of your time with us.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-5 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+          <div class="d-flex">
+          <i class='fas fa-biking' style='font-size:36px'></i>
+            <h5 class="ms-3">Fitness Room</h5>
+          </div>
+          <p>
+          Varied exercise equipment for cardio, strength training, and functional workouts.
+          Qualified trainers and helpful staff to assist users, with options for personal training.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-5 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+          <div class="d-flex">
+            <i class='fas fa-biking' style='font-size:36px'></i>
+            <h5 class="ms-3">Sauna</h5>
+          </div>
+          <p>
+          Our state-of-the-art facilities include a rejuvenating sauna and a refreshing pool, providing the perfect escape for relaxation and revitalization.
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-5 px-4">
+        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
+          <div class="d-flex">
+            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <h5 class="ms-3">Pet Friendly at a surcharge</h5>
+          </div>
+          <p>
+          At Tranquila Hitel, we understand that pets are cherished members of your family, and we're delighted to welcome both you and your four-legged companions to our pet-friendly haven.
           </p>
         </div>
       </div>
@@ -46,10 +79,10 @@
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
             <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Wifi</h5>
+            <h5 class="ms-3">Bar</h5>
           </div>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda. Eligendi nobis amet molestias adipisci non nihil harum odit veritatis?
+          Bar facilities in our hotels aim to enhance the overall guest experience by offering a space for socializing, relaxation, and enjoyment of quality beverages. 
           </p>
         </div>
       </div>
@@ -57,43 +90,10 @@
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
             <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Wifi</h5>
+            <h5 class="ms-3">Luggage Storage</h5>
           </div>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda. Eligendi nobis amet molestias adipisci non nihil harum odit veritatis?
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Wifi</h5>
-          </div>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda. Eligendi nobis amet molestias adipisci non nihil harum odit veritatis?
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Wifi</h5>
-          </div>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda. Eligendi nobis amet molestias adipisci non nihil harum odit veritatis?
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
-        <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
-          <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Wifi</h5>
-          </div>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda. Eligendi nobis amet molestias adipisci non nihil harum odit veritatis?
+          Arriving early or departing late? No worries. Our luggage storage facilities are designed to make your transition seamless, allowing you to maximize every moment of your stay without the burden of heavy bags.
           </p>
         </div>
       </div>
