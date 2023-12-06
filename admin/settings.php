@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Dashboard</title>
+    <title>Admin Panel - Settings</title>
     <?php require('inc/links.php'); ?>
 </head>
 
@@ -52,6 +52,8 @@
 											Our website will be shutdown
 										</p>	
                 </div>
+								
+								<br>
 
 								<!-- Contact Us Setting section -->
 								<div class="card border-0 shadow-sm mb-4">

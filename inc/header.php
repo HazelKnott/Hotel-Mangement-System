@@ -75,42 +75,42 @@ require('admin/inc/essentials.php');
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="register-form">
             <span class="badge rounded-pill text-bg-light text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nam.</span>
             <div class="container-fluid">
               <div class="row">   
                 <!-- name, email, phone num, picture, address, date of birth, password, confirm pasword  -->
                 <div class="col-md-6 p-0 mb-3 pe-2">
                   <label class="form-label">Name</label>
-                  <input type="text" class="form-control shadow-none border border-dark">
+                  <input name="name" type="text" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3">
                   <label class="form-label">Email</label>
-                  <input type="email" class="form-control shadow-none border border-dark">
+                  <input name="email" type="email" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3 pe-2">
                   <label class="form-label">Phone Number</label>
-                  <input type="number" class="form-control shadow-none border border-dark">
+                  <input name="phonenum" type="number" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3">
                   <label class="form-label">Picture</label>
-                  <input type="file" class="form-control shadow-none border border-dark">
+                  <input name="profile" type="file" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3 pe-2">
                   <label class="form-label">Address</label>
-                  <textarea class="form-control shadow-none border border-dark" rows="1"></textarea>
+                  <textarea name="address" class="form-control shadow-none border border-dark" rows="1"></textarea>
                 </div>
                 <div class="col-md-6 p-0 mb-3">
                   <label class="form-label">Date of Birth</label>
-                  <input type="date" class="form-control shadow-none border border-dark">
+                  <input name="dob" type="date" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3 pe-2">
                   <label class="form-label">Password</label>
-                  <input type="password" class="form-control shadow-none border border-dark">
+                  <input name="pass" type="password" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3">
                   <label class="form-label">Confirm Password</label>
-                  <input type="password" class="form-control shadow-none border border-dark">
+                  <input name="cpass" type="password" class="form-control shadow-none border border-dark">
                 </div>
               </div>
             </div>
