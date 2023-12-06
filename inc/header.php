@@ -1,3 +1,8 @@
+<?php
+require('admin/inc/db_config.php');
+require('admin/inc/essentials.php');
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-2 shadow-sm sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Tranquil Hotel</a>

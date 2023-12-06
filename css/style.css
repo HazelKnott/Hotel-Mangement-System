@@ -53,10 +53,17 @@ input[type=number] {
     color: white;
   }
 
+  .custom-alert{
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 
-
-/* .h-line{
+ .h-line{
     width: 10px;
     margin: 0 -50px;
     height: 1.7px;
-} */
+} 

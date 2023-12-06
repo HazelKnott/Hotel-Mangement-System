@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Hotel -  Contact Us</title>
+    <title>Tranquil Hotel -  Contact Us</title>
     <?php require('inc/links.php'); ?>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -60,31 +60,50 @@
         
           <div class="col-lg-5 col-md-5">
              <div class="bg-white p-4 rounded mb-4 border border-dark">
-                <from>
+                <form method="POST">
                   <h5>Send a message </h5>
                     <div class="nb-3">
                       <label class="form-label" style= "font-weight: 500">Name</label>
-                   <input type="text" class="form-control border border-dark">
+                      <input name="name" required type="text" class="form-control border border-dark">
                     </div>
                    <div class="nb-3">
                    <label class="form-label" style= "font-weight: 500">Email</label>
-                   <input type="email" class="form-control border border-dark">
+                   <input name="email" required type="email" class="form-control border border-dark">
                     </div>
                     <div class="nb-3">
                     <label class="form-label" style= "font-weight: 500">Subject</label>
-                    <input type="text" class="form-control border border-dark">
+                    <input name="subject" required type="text" class="form-control border border-dark">
                    </div>
                    <div class="nb-3">
                   <label class="form-label" style= "font-weight: 500">Message</label>
-                  <textarea class="form-control shadow-none border border-dark" rows="5" style="resize: none"></textarea>
+                  <textarea name="message" required class="form-control shadow-none border border-dark" rows="5" style="resize: none"></textarea>
                   </div>
-                   <button type="submit" class="btn text-white custom-bg mt-3">SEND</button>
-                </from>
+                   <button type="submit" name="send" class="btn-light text-black custom-bg mt-3">SEND</button>
+                </form>
         </div>  
      </div>
     </div>
  </div>
-  <?php require('inc/footer.php'); ?>
+
+ <?php
+   if(isset($_POST['send']))
+   {
+    $frm_data = filteration($_POST);
+    $q ="INSERT INTO `user_message`(`name`, `email`, `subject`, `message` ) VALUES (?,?,?,?)";
+    $values = [$frm_data['name'], $frm_data['email'], $frm_data['subject'], $frm_data['message']];
+
+    $res = insert($q,$values, 'ssss');
+      if($res==1){
+        alert('success', 'Mail sent');
+      }
+      else{
+        alert('error', 'Server Down! Try again later.');
+      }
+   }
+ ?>
+ 
+  <?php require('inc/footer.php'); 
+   ?>
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
