@@ -55,7 +55,7 @@
             <div class="col-lg-2 mb-3">
               <label class="form-label">Adult</label>
               <select class="form-select shadow-none border border-dark">
-              <option selected>Open this select menu</option>
+              <option selected>Choose</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
@@ -64,14 +64,14 @@
             <div class="col-lg-2 mb-3">
               <label class="form-label">Children</label>
               <select class="form-select shadow-none border border-dark">
-                <option selected>Open this select menu</option>
+                <option selected>Choose</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>
             </div>
             <div class="col-lg-2 ps-5 mb-lg-3 mt-2">
-              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark btn-success">Submit</button>
             </div>
           </div>
         </form>
@@ -124,7 +124,7 @@
               </span>
             </div>
             <div class="d-flex">
-              <a href="#" class="btn btn-primary mt-2">More Details >>></a>
+              <a href="#" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark">More Details >>></a>
             </div>
           </div>
         </div>
@@ -169,7 +169,7 @@
               </span>
             </div>
             <div class="d-flex">
-              <a href="#" class="btn btn-primary mt-2">More Details >>></a>
+              <a href="#" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark">More Details >>></a>
             </div>
           </div>
         </div>
@@ -217,14 +217,14 @@
             
 
             <div class="d-flex">
-              <a href="#" class="btn btn-primary mt-2">More Details >>></a>
+              <a href="#" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark">More Details >>></a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-lg-12 text-center mt-5">
-        <a href="#" class="btn btn-sm btn-outline-primary rounded-0 fw-bold shadow-none pt-24"> More Rooms</a>
+        <a href="rooms.php" class="btn btn-sm btn-light btn-sm ms-2 p-2 btn-outline-secondary"> More Rooms</a>
       </div>
     </div>
   </div>
@@ -254,7 +254,7 @@
         <h5 class="mt-3">Fitness Center</h5>
       </div>
       <div class="col-lg-12 text-center mt-5">
-        <a href="#" class="btn btn-sm btn-outline-primary rounded-0 fw-bold shadow-none pt-24"> More Details</a>
+        <a href="facilities.php" class="btn btn-sm btn-light btn-sm ms-2 p-2 btn-outline-secondary"> More Details</a>
       </div>
     </div>
   </div>

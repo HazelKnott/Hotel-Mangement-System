@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Hotel -  About Us</title>
+    <title>Tranquil Hotel -  About Us</title>
     <?php require('inc/links.php') ?>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -19,7 +19,8 @@
     <h2 class="fw-bold text-center text-decoration-underline"> About Us</h2>
     <!-- <div class="border-bottom border-dark h-line"></div> -->
     <p class="text-center mt-3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est quidem enim ducimus doloremque quaerat error mollitia, itaque veniam, perspiciatis, dicta quam at ratione! Voluptates vel quasi laborum nesciunt. Voluptate, accusamus, quis facilis obcaecati laborum fugit vitae cupiditate dolor vel repellendus molestiae qui tempore nihil voluptatibus? Placeat optio pariatur minus.
+      A cozy, eerie, and welcoming environment. We provide you the chance to witness our teamwork <br>
+      by making you a one of a kind Hotel Booking Experience.
     </p>
   </div>
 
@@ -32,7 +33,7 @@
       <div class="container">
         <h2>Hazel Jade O. Lobenaria</h2>
         <p class="title">Backend</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>In charge of the database.</p>
         <p>lobenaria.hazeljade.bscs2021@gmail.com</p>
       </div>
     </div>
@@ -44,8 +45,8 @@
       <div class="container">
         <h2>John Joven Borromeo</h2>
         <p class="title">Project Head</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>bscs2021@gmail.com</p>
+        <p>Both Backend and Frontend.</p>
+        <p>borromeo.johnjoven.bscs2021@gmail.com</p>
         
       </div>
     </div>
@@ -57,8 +58,8 @@
       <div class="container">
         <h2>Jamaica Rose Grafil</h2>
         <p class="title">Frontend</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>bscs2021@gmail.com</p>
+        <p>In charge of the Frontend or UI.</p>
+        <p>grafil.jamaicarose.bscs2021@gmail.com</p>
         
       </div>
     </div>

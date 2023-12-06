@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Hotel - Our Rooms</title>
+    <title>Tranquil Hotel - Our Rooms</title>
     <?php require('inc/links.php') ?>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -101,7 +101,7 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-primary mt-2">Book Now</a>
+                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
                     <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
@@ -158,7 +158,7 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-primary mt-2">Book Now</a>
+                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
                     <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
@@ -215,7 +215,7 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-primary mt-2">Book Now</a>
+                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
                     <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Hotel -  Facilities</title>
+    <title>Tranquil Hotel -  Facilities</title>
     <?php require('inc/links.php') ?>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -25,7 +25,7 @@
     <h2 class="fw-bold text-center text-decoration-underline">Our Facilities</h2>
     <!-- <div class="border-bottom border-dark h-line"></div> -->
     <p class="text-center mt-3">
-    Greetings from Tranquila Hotel! We are thrilled to welcome you to an exceptional stay where your comfort and satisfaction are our top priorities. Our world-class facilities have been thoughtfully designed to enhance every aspect of your experience with us.
+    Greetings from Tranquil Hotel! We are thrilled to welcome you to an exceptional stay where your comfort and satisfaction are our top priorities. Our world-class facilities have been thoughtfully designed to enhance every aspect of your experience with us.
     </p>
   </div>
 

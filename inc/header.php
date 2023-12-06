@@ -12,7 +12,7 @@ require('admin/inc/essentials.php');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active p-2 bd-highlight me-3" aria-current="page" href="index.php">Homepage</a>
+            <a class="nav-link p-2 bd-highlight me-3" aria-current="page" href="index.php">Homepage</a>
           </li>
           <li class="nav-item">
             <a class="nav-link p-2 bd-highlight me-3" href="rooms.php">Rooms</a>
@@ -43,7 +43,7 @@ require('admin/inc/essentials.php');
         <div class="modal-header">
           <h5 class="modal-title d-flex align-items-center" id="staticBackdropLabel">
             <i class="bi bi-person-circle fs-3- me-2"></i> User Login </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form>
@@ -57,8 +57,8 @@ require('admin/inc/essentials.php');
               <input type="password" class="form-control border border-dark" id="exampleInputPassword1">
             </div>
             <div class="mb-5 d-flex justify-content-between align-items-center">
-              <button type="button" class="btn btn-primary">Login</button>
-              <a href="javascript: void(0)">Forgot Password</a>
+              <button type="button" class="btn btn-light btn-sm ms-2 p-2 btn-outline-secondary">Login</button>
+              <a href="javascript: void(0)" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Forgot Password</a>
             </div>
           </form>
         </div>
@@ -115,7 +115,7 @@ require('admin/inc/essentials.php');
               </div>
             </div>
             <div class="text-center my-1">
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="submit" class="btn btn-light btn-sm ms-2 p-2 btn-outline-secondary">Register</button>
             </div>
           </form>
         </div>
