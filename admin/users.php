@@ -37,23 +37,44 @@
 							</div> -->
 
 							<div class="table-responsive-ld" style="min-height: 1300px">
-								<table class="table table-hover border">
-									<tr class="bg-dark text-light">
-										<th scope="col">#</th>
-										<th scope="col">Name</th>
-										<th scope="col">Email</th>
-										<th scope="col">Phone No</th>
-										<th scope="col">Location</th>
-										<th scope="col">DOB</th>
-										<th scope="col">Verified</th>
-										<th scope="col">Status</th>
-										<th scope="col">Date</th>
-										<th scope="col">Action</th>
-									</tr>
-									<tbody id="users-data">
-									</tbody>
-								</table>
-							</div>
+                    <table class="table table-hover border">
+                        <tr class="bg-dark text-light">
+                            <!-- Table headers -->
+                            <th scope="col">#</th>
+                            <th scope="col">User name</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        <tbody id="users-data">
+                            <?php
+                            // Fetch user data from the 'users' table
+                            $query = "SELECT * FROM users";
+                            $result = mysqli_query($con, $query);
+                            $i = 1;
+
+                            // Display user data in the table rows
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>" . $i++ . "</td>";
+                                echo "<td>" . $row['username'] . "</td>";
+                                echo "<td>" . $row['firstname'] . "</td>";
+                                echo "<td>" . $row['lastname'] . "</td>";
+                                echo "<td>" . $row['email'] . "</td>";
+                                echo "<td>" . $row['phonenumber'] . "</td>";
+                                echo "<td>" . $row['status'] . "</td>";
+                                echo "<td>" . $row['date'] . "</td>";
+                                echo "<td> Actions </td>"; // You can add action buttons here
+                                echo "</tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
 
 						</div>
 					</div>

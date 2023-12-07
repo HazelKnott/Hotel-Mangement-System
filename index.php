@@ -65,7 +65,7 @@
 
 
   <!-- Carousel -->
-  <div class="container-fluid p-100 h-200 w-100">
+  <div class="d-flex align-items-center">
     <div class="swiper swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">

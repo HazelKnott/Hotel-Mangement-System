@@ -1,3 +1,8 @@
+<?php
+    require('inc/essentials.php');
+    require('inc/db_config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,8 +106,10 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
-                    <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
+                  <button type="button" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                   BOOK NOW
+                  </button>
+                    
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -158,8 +165,9 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
-                    <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
+                  <button type="button" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                   BOOK NOW
+                  </button>
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -215,8 +223,9 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
-                    <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
+                  <button type="button" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                   BOOK NOW
+                  </button>
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -230,8 +239,82 @@
       </div>
     </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookingModalLabel">Edit Booking Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editBookingForm">
+                    <!-- Customer Name -->
+                    <div class="mb-3">
+                        <label for="user_id" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="customerName" name="customer_name" placeholder="Customer's Name">
+                    </div>
+
+                    <!-- Check-in and Check-out Dates -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="check_in_date" class="form-label">Check-in Date</label>
+                            <input type="date" class="form-control" id="checkInDate" name="check_in_date">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="check_out_date" class="form-label">Check-out Date</label>
+                            <input type="date" class="form-control" id="checkOutDate" name="check_out_date">
+                        </div>
+                    </div>
+
+                    <!-- Number of Guests -->
+                    <div class="mb-3">
+                        <label for="num_guests" class="form-label">Number of Guests</label>
+                        <input type="number" class="form-control" id="guests" name="guests" min="1">
+                    </div>
+
+                    <!-- Room Type -->
+                    <div class="mb-3">
+                        <label for="room_id" class="form-label">Room Number</label>
+                        <input type="number" class="form-control" id="rooms" name="roomNum" min="1">
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+    if(isset($_POST['send'])) {
+        $frm_data = filteration($_POST);
+        $q = "INSERT INTO `bookings`(`customer_name`, `room_id`, `check_in_date`, `check_out_date`, `num_guests`) VALUES (?,?,?,?,?)";
+        $values = [
+            $frm_data['customer_name'], // Updated array syntax here
+            $frm_data['room_id'],
+            $frm_data['check_in_date'],
+            $frm_data['check_out_date'],
+            $frm_data['num_guests']
+        ];
+
+        $res = insert($q, $values, 'sssss');
+        if($res == 1) {
+            alert('success', 'Mail sent');
+        } else {
+            alert('error', 'Server Down! Try again later.');
+        }
+    }
+?>
+
+
   <?php require('inc/footer.php') ?>
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
+
