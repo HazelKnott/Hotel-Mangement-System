@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-2 shadow-sm sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Tranquil Hotel</a>
@@ -31,6 +33,7 @@
     </div>
   </div>
 </nav>
+
   <!-- Login Modal -->
   <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -70,47 +73,39 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="register-form">
+          <form action="index.php" method="post">
             <span class="badge rounded-pill text-bg-light text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nam.</span>
             <div class="container-fluid">
               <div class="row">   
                 <!-- name, email, phone num, picture, address, date of birth, password, confirm pasword  -->
                 <div class="col-md-6 p-0 mb-3 pe-2">
-                  <label class="form-label">Name</label>
-                  <input name="name" type="text" class="form-control shadow-none border border-dark">
+                  <label for="username" class="form-label">Username</label>
+                  <input name="username" type="text" class="form-control shadow-none border border-dark" required>
                 </div>
-                <div class="col-md-6 p-0 mb-3">
-                  <label class="form-label">Email</label>
+                <div class="col-md-6 p-0 mb-3 pe-2">
+                  <label for="firstname" class="form-label">First name</label>
+                  <input name="firstname" type="text" class="form-control shadow-none border border-dark" required>
+                </div>
+                <div class="col-md-6 p-0 mb-3 pe-2">
+                  <label for="lastname" class="form-label">Last name</label>
+                  <input name="lastname" type="text" class="form-control shadow-none border border-dark" required>
+                </div>
+                <div class="col-md-6 p-0 mb-3 pe-2">
+                  <label for="email" class="form-label">E-mail</label>
                   <input name="email" type="email" class="form-control shadow-none border border-dark">
                 </div>
                 <div class="col-md-6 p-0 mb-3 pe-2">
-                  <label class="form-label">Phone Number</label>
-                  <input name="phonenum" type="number" class="form-control shadow-none border border-dark">
-                </div>
-                <div class="col-md-6 p-0 mb-3">
-                  <label class="form-label">Picture</label>
-                  <input name="profile" type="file" class="form-control shadow-none border border-dark">
+                  <label for="phonenumber" class="form-label">Phone Number</label>
+                  <input name="phonenumber" type="number" class="form-control shadow-none border border-dark" required>
                 </div>
                 <div class="col-md-6 p-0 mb-3 pe-2">
-                  <label class="form-label">Address</label>
-                  <textarea name="address" class="form-control shadow-none border border-dark" rows="1"></textarea>
-                </div>
-                <div class="col-md-6 p-0 mb-3">
-                  <label class="form-label">Date of Birth</label>
-                  <input name="dob" type="date" class="form-control shadow-none border border-dark">
-                </div>
-                <div class="col-md-6 p-0 mb-3 pe-2">
-                  <label class="form-label">Password</label>
-                  <input name="pass" type="password" class="form-control shadow-none border border-dark">
-                </div>
-                <div class="col-md-6 p-0 mb-3">
-                  <label class="form-label">Confirm Password</label>
-                  <input name="cpass" type="password" class="form-control shadow-none border border-dark">
+                  <label for="password" class="form-label">Password</label>
+                  <input name="password" type="password" class="form-control shadow-none border border-dark" required>
                 </div>
               </div>
             </div>
             <div class="text-center my-1">
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button name="create" type="submit" class="btn btn-primary">Register</button>
             </div>
           </form>
         </div>

@@ -1,3 +1,8 @@
+<?php
+  require('inc/db_config.php')
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,53 @@
 </head>
 <body class="bg-light">
   <?php require('inc/header.php') ?>
+
+  
+  <?php
+    if(isset($_POST['create'])){
+        // Assuming you have a database connection object $con
+        // Make sure to replace 'your_table_name' with the actual table name
+        $query = "INSERT INTO users (username, firstname, lastname, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmtinsert = $con->prepare($query);
+
+        $username = $_POST['username'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $phonenumber = $_POST['phonenumber'];
+        $password = $_POST['password'];
+
+        $result = $stmtinsert->execute([$username, $firstname, $lastname, $email, $phonenumber, $password]);
+
+        // $user_query = "SELECT * FROM users WHERE username = '$username'";
+        // $user_result = mysqli_query($con, $user_query);
+
+        // if(mysqli_num_rows($user_result)!=0)
+        // { 
+        //   //need improvement
+        //   echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        //         Username already exist!
+        //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        //             <span aria-hidden="true">&times;</span>
+        //         </button>
+        //       </div>';
+        // }
+
+
+
+
+        // if($result){
+        //     echo 'Data successfully saved.';
+        //     // Use single quotes in the console.log argument
+        //     echo '<script>';
+        //     echo 'console.log("PHP: Data received - ' . $firstname . ' ' . $lastname . '");';
+        //     echo '</script>';
+        // } else {
+        //     echo 'There was an error.';
+        // }
+    }
+
+?>
 
 
   <!-- Carousel -->
