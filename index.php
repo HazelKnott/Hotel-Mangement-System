@@ -65,7 +65,7 @@
 
 
   <!-- Carousel -->
-  <div class="container-fluid px-lg-4 mt-4">
+  <div class="container-fluid p-100 h-200 w-100">
     <div class="swiper swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -90,7 +90,7 @@
     </div>  
   </div>
   <!-- Check availability form -->
-  <div class="container availability-form">
+  <!-- <div class="container availability-form">
     <div class="row">
       <div class="col-lg-12 bg-white shadow p-4 rounded">
         <h5>Check Booking Availability</h5>
@@ -129,7 +129,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Our Rooms -->
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold">
     Our Rooms
