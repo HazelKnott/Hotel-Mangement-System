@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Hotel - Our Rooms</title>
+    <title>Tranquil Hotel - Our Rooms</title>
     <?php require('inc/links.php') ?>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
@@ -57,7 +57,7 @@
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                <img src="images/rooms/1.jpg" class="img-fluid rounded">
+                <img src="images/rooms/room 104.jpg" class="img-fluid rounded">
               </div>
               <div class="col-md-5 px-lg-3 px-md-3 px-0">
 
@@ -101,7 +101,7 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-primary mt-2">Book Now</a>
+                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
                     <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
@@ -114,7 +114,7 @@
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                <img src="images/rooms/1.jpg" class="img-fluid rounded">
+                <img src="images/rooms/room 105.jpg" class="img-fluid rounded">
               </div>
               <div class="col-md-5 px-lg-3 px-md-3 px-0">
 
@@ -158,7 +158,7 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-primary mt-2">Book Now</a>
+                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
                     <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>
@@ -171,7 +171,7 @@
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                <img src="images/rooms/1.jpg" class="img-fluid rounded">
+                <img src="images/rooms/room 101.jpg" class="img-fluid rounded">
               </div>
               <div class="col-md-5 px-lg-3 px-md-3 px-0">
 
@@ -215,7 +215,7 @@
                 <div class="card-body">
                   <h6>____ Per Night</h6>
                   <div>
-                  <a href="#" class="btn btn-primary mt-2">Book Now</a>
+                  <a href="#" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary">Book Now</a>
                     <!-- <a href="#" class="btn btn-primary mt-2">More Details >>></a> -->
                   </div>
                   <!-- <h5 class="card-title">Card title</h5>

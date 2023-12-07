@@ -1,3 +1,4 @@
+
 <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between sticky-top">
         <h3 class="mb-0">Tranquil Hotel</h3>
         <a href="logout.php" class="btn btn-light btn-sm">Log-out</a>

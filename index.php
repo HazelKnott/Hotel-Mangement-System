@@ -107,7 +107,7 @@
             <div class="col-lg-2 mb-3">
               <label class="form-label">Adult</label>
               <select class="form-select shadow-none border border-dark">
-              <option selected>Open this select menu</option>
+              <option selected>Choose</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
@@ -116,14 +116,14 @@
             <div class="col-lg-2 mb-3">
               <label class="form-label">Children</label>
               <select class="form-select shadow-none border border-dark">
-                <option selected>Open this select menu</option>
+                <option selected>Choose</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>
             </div>
             <div class="col-lg-2 ps-5 mb-lg-3 mt-2">
-              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark btn-success">Submit</button>
             </div>
           </div>
         </form>
@@ -138,7 +138,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card border-0 shadow" style="max-width: 400px; margin: auto;">
-          <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+          <img src="images/rooms/room 101.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5>Room Name</h5>
             <h6>____ Per Night</h6>
@@ -176,14 +176,14 @@
               </span>
             </div>
             <div class="d-flex">
-              <a href="#" class="btn btn-primary mt-2">More Details >>></a>
+              <a href="#" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark">More Details >>></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card border-0 shadow" style="max-width: 400px; margin: auto;">
-          <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+          <img src="images/rooms/room 102.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5>Room Name</h5>
             <h6>____ Per Night</h6>
@@ -221,14 +221,14 @@
               </span>
             </div>
             <div class="d-flex">
-              <a href="#" class="btn btn-primary mt-2">More Details >>></a>
+              <a href="#" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark">More Details >>></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card border-0 shadow" style="max-width: 400px; margin: auto;">
-          <img src="images/rooms/1.jpg" class="card-img-top" alt="...">
+          <img src="images/rooms/room 103.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5>Room Name</h5>
             <h6>____ Per Night</h6>
@@ -265,15 +265,18 @@
                 <i class="bi bi-star-fill text-warning"></i>
               </span>
             </div>
+
+            
+
             <div class="d-flex">
-              <a href="#" class="btn btn-primary mt-2">More Details >>></a>
+              <a href="#" class="btn btn-light btn-sm ms-2 p-2 btn-outline-dark">More Details >>></a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col-lg-12 text-center mt-5">
-        <a href="#" class="btn btn-sm btn-outline-primary rounded-0 fw-bold shadow-none pt-24"> More Rooms</a>
+        <a href="rooms.php" class="btn btn-sm btn-light btn-sm ms-2 p-2 btn-outline-secondary"> More Rooms</a>
       </div>
     </div>
   </div>
@@ -283,27 +286,27 @@
   <div class="container">
     <div class="row mt-4 pt-4 justify-content-evenly">
       <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-        <img src="images/facilities2/wifi.png" alt="...">
-        <h5 class="mt-3">Wifi</h5>
+        <img src="images/facilities2/breakfast.jpg" alt="...">
+        <h5 class="mt-3">Breakfast Buffet</h5>
       </div>
       <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-        <img src="images/facilities2/wifi.png" alt="...">
-        <h5 class="mt-3">Wifi</h5>
+        <img src="images/facilities2/alchol.jpg" alt="...">
+        <h5 class="mt-3">Bar</h5>
       </div>
       <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-        <img src="images/facilities2/wifi.png" alt="...">
-        <h5 class="mt-3">Wifi</h5>
+        <img src="images/facilities2/pet.jpg" alt="...">
+        <h5 class="mt-3">Pet Friendly</h5>
       </div>
       <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-        <img src="images/facilities2/wifi.png" alt="...">
-        <h5 class="mt-3">Wifi</h5>
+        <img src="images/facilities2/download.jpg" alt="...">
+        <h5 class="mt-3">Sauna and Pool</h5>
       </div>
       <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
-        <img src="images/facilities2/wifi.png" alt="...">
-        <h5 class="mt-3">Wifi</h5>
+        <img src="images/facilities2/home gym.jpg" alt="...">
+        <h5 class="mt-3">Fitness Center</h5>
       </div>
       <div class="col-lg-12 text-center mt-5">
-        <a href="#" class="btn btn-sm btn-outline-primary rounded-0 fw-bold shadow-none pt-24"> More Details</a>
+        <a href="facilities.php" class="btn btn-sm btn-light btn-sm ms-2 p-2 btn-outline-secondary"> More Details</a>
       </div>
     </div>
   </div>
@@ -332,13 +335,13 @@
           <br>
           <a href="#" class="d-inline-block mb-3">
             <span class="badge bg-light text-dark fs-6 p-2">
-             <i class="bi bi-facebook"> </i>Facebook
+            <i class="bi bi-instagram"></i>Instagram
             </span>
           </a>
           <br>
           <a href="#" class="d-inline-block mb-3">
             <span class="badge bg-light text-dark fs-6 p-2">
-              <i class="bi bi-facebook"> </i>Facebook
+            <i class="bi bi-twitter"></i> Twitter
             </span>
           </a>
         </div>
