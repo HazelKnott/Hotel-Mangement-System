@@ -1,40 +1,90 @@
+<?php
+  require('inc/db_config.php')
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <?php require('inc/links.php') ?>
+  <style>
+        div.login-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<?php
+    
+    if (isset($_POST['login'])) {
+        // Assuming you have a database connection object $con
+        // Make sure to replace 'your_table_name' with the actual table name
+        $query = "SELECT * FROM users WHERE username = ? AND password = ?";
+        $stmtselect = $con->prepare($query);
+    
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    
+        $stmtselect->bind_param('ss', $username, $password); // Assuming both username and password are strings
+    
+        $stmtselect->execute();
+        $stmtselect->store_result();
+    
+        if ($stmtselect->num_rows > 0) {
+            // Login successful
+            echo '1';
+            header("Location: index.php");
+        } else {
+            // Login failed
+            echo 'Invalid username or password';
+        }
+        
+        $stmtselect->close();
+
+    }
+    
+    if(isset($_POST['create'])){
+        // Assuming you have a database connection object $con
+        // Make sure to replace 'your_table_name' with the actual table name
+        $query = "INSERT INTO users (username, firstname, lastname, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmtinsert = $con->prepare($query);
+
+        $username = $_POST['username'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $phonenumber = $_POST['phonenumber'];
+        $password = $_POST['password'];
+
+        $result = $stmtinsert->execute([$username, $firstname, $lastname, $email, $phonenumber, $password]);
+
+    }
+?> 
+    <!-- fix the redirecting issue -->
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-2 shadow-sm sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Tranquil Hotel</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active p-2 bd-highlight me-3" aria-current="page" href="index.php">Homepage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2 bd-highlight me-3" href="rooms.php">Rooms</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2 bd-highlight me-3" href="facilities.php">Facilities</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2 bd-highlight me-3" href="contact.php">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-2 bd-highlight me-3" href="about.php">About Us</a>
-          </li>
-        </ul>
-        <button type="button" class="btn btn-light btn-sm ms-auto p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#loginModal">
-          LOGIN
-        </button>
-        <button type="button" class="btn btn-light btn-sm ms-2 p-2 btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#registerModal">
-          REGISTER
-        </button>
+    <div class="login-form text-center rounded bg-white shadow overflow-hidden">
+        <form method="POST">
+            <h4 class="bg-dark text-white py-3">LOGIN</h4>
+            <div class="mb-3 px-2">
+                <button name="login" type="button" class="btn btn-danger custom-bg shadow-none mb-3 " data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</button>
+            </div>
+            <div class="mb-4 px-2">
+                 <button name="create" type="button" class="btn btn-danger custom-bg shadow-none mb-3 " data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button>
+            </div>
+        </form>
     </div>
-  </div>
-</nav>
 
-  <!-- Login Modal -->
+    
+
+    <!-- Login Modal -->
   <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -111,3 +161,7 @@
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
