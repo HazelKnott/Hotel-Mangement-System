@@ -21,10 +21,12 @@ function redirect($url){
 function alert($type, $msg) {
     $bs_alert = ($type == "success") ? "alert-success" : "alert-danger";
 
-    echo '<div class="alert ' . $bs_alert . ' alert-dismissible fade show" role="alert">
+    echo '<div class="position-fixed mt-6 top-6 end-0 p-3" style="z-index: 9999">
+	    <div class="alert ' . $bs_alert . ' alert-dismissible fade show" role="alert">
         <strong>' . $msg . '</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>';
+        </div>
+		</div>';
 }
 
 

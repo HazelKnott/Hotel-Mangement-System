@@ -36,12 +36,6 @@ input[type=number] {
     height: 1.7px;
 } */
 
-.custom-alert{
-    position: fixed;
-    top: 200px;
-    right: 25px;
-}
-
 #dashboard-menu{
     position: fixed;
     height: 100%;
