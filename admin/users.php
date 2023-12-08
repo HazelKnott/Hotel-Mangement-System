@@ -2,6 +2,37 @@
     require('inc/essentials.php');
     require('inc/db_config.php');
     adminLogin();
+
+    if(isset($_POST['delete_user'])) {
+        $user_id = $_POST['user_id'];
+
+        // Perform delete operation here using user_id
+        $query = "DELETE FROM users WHERE id = $user_id";
+        $delete_result = mysqli_query($con, $query);
+
+        // Check if delete was successful
+        if($delete_result) {
+            alert('success', 'Deleted.');
+        } else {
+            alert('error', 'Operation Failed');
+        }
+    }
+
+    if(isset($_POST['update_status'])) {
+        $user_id = $_POST['user_id'];
+        $new_status = $_POST['new_status'];
+
+        // Perform status update operation here using user_id and new_status
+        $update_query = "UPDATE users SET status = '$new_status' WHERE id = $user_id";
+        $update_result = mysqli_query($con, $update_query);
+
+        // Check if update was successful
+        if($update_result) {
+            alert('success', 'Updated');
+        } else {
+            alert('error', 'Operation Failed');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -44,11 +75,11 @@
                             <th scope="col">User name</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
-                            <th scope="col">Email</th>
+                            <th scope="col"class="text-center">Email</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Status</th>
                             <th scope="col">Date</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" width="20%" class="text-center">Action</th>
                         </tr>
                         <tbody id="users-data">
                             <?php
@@ -68,8 +99,25 @@
                                 echo "<td>" . $row['phonenumber'] . "</td>";
                                 echo "<td>" . $row['status'] . "</td>";
                                 echo "<td>" . $row['date'] . "</td>";
-                                echo "<td> Actions </td>"; // You can add action buttons here
+                                echo "<td>";
+                                echo '<form method="POST" action="">';
+                                echo '<input type="hidden" name="user_id" value="' . $row['id'] . '">';
+        
+                                // Delete button
+                                echo '<button type="submit" name="delete_user" class="btn btn-danger btn-sm ms-2">Delete</button>';
+        
+                                // Update status dropdown
+                                echo '<select class="ms-2" name="new_status">';
+                                echo '<option value="Active">Active</option>';
+                                echo '<option value="Inactive">Inactive</option>';
+                                echo '</select>';
+        
+                                // Update status button
+                                echo '<button href="user.php" type="submit" name="update_status" class="btn btn-primary btn-sm mt-2 ms-4">Update Status</button>';
+                                echo '</form>';
+                                echo "</td>";
                                 echo "</tr>";
+                               
                             }
                             ?>
                         </tbody>

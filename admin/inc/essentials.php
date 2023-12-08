@@ -19,15 +19,15 @@ function redirect($url){
 }
 
 function alert($type, $msg) {
+    $bs_alert = ($type == "success") ? "alert-success" : "alert-danger";
 
-	$bs_alert = ($type == "success") ? "alert-success" : "alert-danger";
-
-	echo '
-			<div class="alert ' . $bs_alert . ' ' . $type . ' alert-dismissible fade show custom-alert" role="alert">
-					<strong>' . $msg . '</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>';
+    echo '<div class="alert ' . $bs_alert . ' alert-dismissible fade show" role="alert">
+        <strong>' . $msg . '</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
 }
+
+
 
 function uploadUserImage($image){
 	$valid_mine = ['image/jpeg', 'image/png', 'image/webp'];
