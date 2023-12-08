@@ -19,19 +19,29 @@
 	// }
 	
 	if (isset($_GET['del'])) {
-		$frm_data = filteration($_GET);
-		if ($frm_data['del'] == 'all') {
-			// Handle 'del' condition when 'all' is passed
-		} else {
-			$q = "DELETE FROM `user_message` WHERE `sr_no`=?";
-			$values = [$frm_data['del']]; // Assuming 'del' parameter contains the ID to be deleted
-			if (delete($q, $values, 'i')) {
-				alert('success', 'Deleted.');
-			} else {
-				alert('error', 'Operation Failed');
-			}
-		}
-	}
+        $frm_data = filteration($_GET);
+        if ($frm_data['del'] == 'all') {
+            // Handle 'del' condition when 'all' is passed
+        } else {
+            // Display a confirmation dialog before deleting
+            echo '<script>';
+            echo 'if(confirm("Are you sure you want to delete this message?")) {';
+            echo '  window.location.href = "?confirmedDel=' . $frm_data['del'] . '";';
+            echo '}';
+            echo '</script>';
+        }
+    }
+
+    // Perform deletion if confirmed
+    if (isset($_GET['confirmedDel'])) {
+        $q = "DELETE FROM `user_message` WHERE `sr_no`=?";
+        $values = [$_GET['confirmedDel']];
+        if (delete($q, $values, 'i')) {
+            alert('success', 'Deleted.');
+        } else {
+            alert('error', 'Operation Failed');
+        }
+    }
 
 ?>
 
@@ -110,146 +120,9 @@
 				</div>
 			</div>
 		</div>
-		
-		<!-- Add Room Modal -->
-		<!-- <div class="modal fade" id="add-room" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg">
-				<form id="add_room_form">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title">Add Room</h5>
-						</div>
-						<div class="modal-body">
 
-							<div class="row">
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Name</label>
-									<input type="text" min="1" name="name"class="form-control shadow-none" required>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Area</label>
-									<input type="number" min="1" name="area"class="form-control shadow-none" required>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Price</label>
-									<input type="number" min="1" name="price"class="form-control shadow-none" required>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Quantity</label>
-									<input type="number" min="1" name="quantity"class="form-control shadow-none" required>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Adult (Max.)</label>
-									<input type="number" min="1" name="adult"class="form-control shadow-none" required>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Children (Max.)</label>
-									<input type="number" min="1" name="children"class="form-control shadow-none" required>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label class="form-label fw-bold">Description</label>
-									<textarea name="desc" rows="4" class="form-control shadow-none" required></textarea>
-								</div>
-							</div>
-
-
-							<!-- feature and facilities -->
-							<!-- <div class="col-12 mb-3">
-								<label class="form-label fw-bold">Features</label>
-								<div class="row">
-									
-								</div>
-							</div> -->
-							<!-- <div class="col-12 mb-3">
-								<label class="form-label fw-bold">Features</label>
-								<div class="row">
-									
-								</div>
-							</div> -->
-
-						<!-- <div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-							<button type="submit" class="btn btn-primary">SUBMIT</button>
-						</div>
-					</div>
-				</form>
-			</div>
-  	</div>
 
 <?php require('inc/scripts.php'); ?>
-<script>
-
-	let add_room_form = document.getElementById('add_room_form');
-
-	add_room_form.addEventListner('submit',function(){
-		e.preventDefault();
-		add_room();
-	})
-
-	function add_room()
-	{
-		let data = new FormData();
-		data.append('add_room','');
-		data.append('name', add_room_form.element['name'].value);
-		data.append('area', add_room_form.element['area'].value);
-		data.append('price', add_room_form.element['price'].value);
-		data.append('quantity', add_room_form.element['quantity'].value);
-		data.append('adult', add_room_form.element['adult'].value);
-		data.append('children', add_room_form.element['children'].value);
-		data.append('desc', add_room_form.element['desc'].value);
-
-
-		 let features = [];
-		 add_rooms_form.element['features'].forEach(el =>(
-		 	if(el.checked){
-				features.push(el.value);
-			}
-	     ));
-		
-		
-		
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST", "ajax/rooms.php", true);
-
-		xhr.onload = function(){
-			var myModal = document.getElementById('add-room');
-			var modal = bootstrap.Modal.getInstance(myModal);
-			modal.hide();
-
-			if(this.reponseText == 1){
-				alert('success', 'New room added');
-				add_room_form.reset();
-				get_rooms();
-			}
-
-			else{
-				alert('error', 'Server Down! Sorry');
-			}
-
-		}
-
-		xhr.send(data);
-	}
-
-	function get_all_rooms()
-	{
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST", "ajax/rooms.php", true);
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-		xhr.onload = function(){
-			document.getElementById('room-data').innerHTML = this.responseText;
-		}
-
-		xhr.send('get_all_rooms');
-	}
-
-		windows.onload = function()
-		{
-			get_all_rooms();
-		}
-</script> --> -->
-
 
 </body>
 </html>

@@ -41,7 +41,9 @@
 
 <div class="alert alert-dismissible fade show" role="alert">
   <strong class="me-3"></strong>
-  <button type="button"></button>
+  <button type="button">
+    <!-- <a href="../admin/index.php"></a> -->
+  </button>
 </div>
 
 <!-- <script>

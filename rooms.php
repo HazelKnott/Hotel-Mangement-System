@@ -251,7 +251,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bookingModalLabel">Edit Booking Details</h5>
+                <h5 class="modal-title" id="bookingModalLabel">Reservation</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -285,9 +285,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                         <label for="room_id" class="form-label">Room Number</label>
                         <input type="number" class="form-control" id="rooms" name="room_id" min="1">
                     </div>
-
+                    <div class="text-center my-1">
                     <!-- Submit button -->
-                    <button name="send" type="submit" class="btn btn-primary">Save Changes</button>
+                    <button name="send" type="submit" class="btn btn-dark btn-outline-light ">Book</button>
+                    </div>
                 </form>
             </div>
         </div>
