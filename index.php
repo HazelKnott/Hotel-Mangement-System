@@ -14,7 +14,7 @@
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body class="bg-light">
-  <?php require('inc/header.php') ?>
+  <?php require('inc/header_index.php') ?>
 
   <!-- register function -->
   <?php

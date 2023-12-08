@@ -154,7 +154,7 @@
               </div>
             </div>
             <div class="text-center my-1">
-              <button name="create" type="submit" class="btn btn-primary">Register</button>
+              <button name="create" type="submit" class="btn btn-primary" href="loginpage.php">Register</button>
             </div>
           </form>
         </div>

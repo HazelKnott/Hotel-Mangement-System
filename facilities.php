@@ -19,7 +19,7 @@
 </head>
 <body class="bg-light">
 
-  <?php require('inc/header.php') ?>
+  <?php require('inc/header_index.php') ?>
 
   <div class="my-5 px-4">
     <h2 class="fw-bold text-center text-decoration-underline">Our Facilities</h2>

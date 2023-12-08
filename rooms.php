@@ -24,7 +24,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
 </head>
 <body class="bg-light">
 
-  <?php require('inc/header.php') ?>
+  <?php require('inc/header_index.php') ?>
 
     <div class="my-5 px-4">
       <h2 class="fw-bold text-center text-decoration-underlin">OUR ROOMS</h2>
