@@ -16,7 +16,7 @@
 <body class="bg-light">
   <?php require('inc/header.php') ?>
 
-  
+  <!-- register function -->
   <?php
     if(isset($_POST['create'])){
         // Assuming you have a database connection object $con
@@ -60,10 +60,7 @@
         //     echo 'There was an error.';
         // }
     }
-
-?>
-
-
+?> 
   <!-- Carousel -->
   <div class="d-flex align-items-center">
     <div class="swiper swiper-container">
@@ -357,6 +354,40 @@
  <br><br><br>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- <script>
+  
+
+  $(function() {
+    $('#login').click(function(e) {
+      var valid = this.form.checkValidity();
+
+      if (valid) {
+        var username = $('#username').val();
+        var password = $('#password').val();
+      }
+
+      e.preventDefault();
+
+      $.ajax({
+        type: 'POST',
+        url: 'jslogin.php',
+        data: { username: username, password: password },
+        success: function(data) {
+          alert(data);
+          if ($.trim(data) === '1') {
+            setTimeout(function() {
+              window.location.href = 'index.php';
+            }, 2000);
+          }
+        },
+        error: function(data) {
+          alert('There were errors index');
+        }
+      });
+    });
+  });
+</script> -->
 
 <script>
   var swiper = new Swiper(".swiper-container", {
