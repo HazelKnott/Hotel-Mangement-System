@@ -18,7 +18,7 @@
         <a href="rooms.php" class="d-inline-block mb-2 text-center text-dark text-decoration-none">Rooms</a>
         <a href="facilities.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">Facilities</a>
         <a href="contact.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">Contact Us</a>
-        <a href="abput.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">About Us</a>
+        <a href="about.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">About Us</a>
         </div>
       </div>
 
