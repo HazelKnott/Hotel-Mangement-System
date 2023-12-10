@@ -29,43 +29,43 @@ function alert($type, $msg) {
 		</div>';
 }
 
-function validateForm() {
-	// Get the value from the form input
-	var inputValue = document.getElementById('inputField').value;
+// function validateForm() {
+// 	// Get the value from the form input
+// 	var inputValue = document.getElementById('inputField').value;
 
-	// Check if the input value meets the validation condition (e.g., it's not empty)
-	if (inputValue.trim() === '') {
-		// If the condition fails, show an error alert
-		alert('Please enter a value!');
-		return false; // Prevent the form from submitting
-	}
+// 	// Check if the input value meets the validation condition (e.g., it's not empty)
+// 	if (inputValue.trim() === '') {
+// 		// If the condition fails, show an error alert
+// 		alert('Please enter a value!');
+// 		return false; // Prevent the form from submitting
+// 	}
 
-	// If the condition passes, proceed with the form submission
-	return true;
-}
+// 	// If the condition passes, proceed with the form submission
+// 	return true;
+// }
 
-function confirmDelete() {
-    // Display a confirmation dialog
-    var result = confirm("Are you sure you want to delete this item?");
+// function confirmDelete() {
+//     // Display a confirmation dialog
+//     var result = confirm("Are you sure you want to delete this item?");
     
-    // Check user's choice
-    if (result) {
+//     // Check user's choice
+//     if (result) {
         
-    } else {
-     alert("Deletion canceled.");
-    }
-}
+//     } else {
+//      alert("Deletion canceled.");
+//     }
+// }
 
-function validateForm() {
-    var fieldValue = document.getElementById("fieldId").value;
+// function validateForm() {
+//     var fieldValue = document.getElementById("fieldId").value;
 
-    if (fieldValue.trim() === "") {
-        alert("Please fill in the field.");
-        return false; // Prevent form submission
-    }
+//     if (fieldValue.trim() === "") {
+//         alert("Please fill in the field.");
+//         return false; // Prevent form submission
+//     }
 
-    return true; // Allow form submission
-}
+//     return true; // Allow form submission
+// }
 
 
 
@@ -103,3 +103,43 @@ function uploadUserImage($image){
 
 
 ?>
+
+<script>
+	function validateForm() {
+	// Get the value from the form input
+	var inputValue = document.getElementById('inputField').value;
+
+	// Check if the input value meets the validation condition (e.g., it's not empty)
+	if (inputValue.trim() === '') {
+		// If the condition fails, show an error alert
+		alert('Please enter a value!');
+		return false; // Prevent the form from submitting
+	}
+
+	// If the condition passes, proceed with the form submission
+	return true;
+}
+
+function confirmDelete() {
+    // Display a confirmation dialog
+    var result = confirm("Are you sure you want to delete this item?");
+    
+    // Check user's choice
+    if (result) {
+        
+    } else {
+     alert("Deletion canceled.");
+    }
+}
+
+function validateForm() {
+    var fieldValue = document.getElementById("fieldId").value;
+
+    if (fieldValue.trim() === "") {
+        alert("Please fill in the field.");
+        return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission
+}
+</script>
