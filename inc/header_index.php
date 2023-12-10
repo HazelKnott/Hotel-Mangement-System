@@ -24,6 +24,7 @@
             <a class="nav-link p-2 bd-highlight me-3" href="about.php">About Us</a>
           </li>
         </ul>
+        <a href="logout.php" class="btn btn-light btn-sm">Log-out</a>
      </div>
 </div>
 
