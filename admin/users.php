@@ -101,7 +101,7 @@
                                 echo "<td>" . $row['date'] . "</td>";
                                 echo "<td>";
                                 echo '<form method="POST" action="">';
-                                echo '<input type="hidden" name="user_id" value="' . $row['id_no'] . '">';
+                                echo '<input type="hidden" name="user_id" value="' . $row['id'] . '">';
         
                                 // Delete button
                                 echo '<button type="submit" name="delete_user" class="btn btn-danger btn-sm ms-2">Delete</button>';
