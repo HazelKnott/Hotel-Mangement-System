@@ -24,21 +24,48 @@
         }
     }
 
-    // if(isset($_POST['update_status'])) {
+    // if(isset($_POST['send_email'])) {
     //     $booking_id = $_POST['booking_id'];
-    //     $new_status = $_POST['new_status'];
+    //     $email = ''; // Fetch user email associated with this booking_id from the database
 
-    //     // Perform status update operation here using user_id and new_status
-    //     $update_query = "UPDATE bookings SET status = '$new_status' WHERE id = $booking_id";
-    //     $update_result = mysqli_query($con, $update_query);
+    //     // Fetch the booking details
+    //     $query = "SELECT * FROM bookings WHERE booking_id = $booking_id";
+    //     $result = mysqli_query($con, $query);
 
-    //     // Check if update was successful
-    //     if($update_result) {
-    //         alert('success', 'Updated');
+    //     if ($result && mysqli_num_rows($result) > 0) {
+    //         $booking_details = mysqli_fetch_assoc($result);
+    //         $status = $booking_details['booking_status'];
+
+    //         // Email content based on the booking status
+    //         $subject = "Room Reservation Status Update";
+    //         $message = "Your room reservation status is: $status";
+
+    //         // Send email
+    //         if (mail($email, $subject, $message)) {
+    //             alert('success', 'Email sent successfully.');
+    //         } else {
+    //             alert('error', 'Failed to send email.');
+    //         }
     //     } else {
-    //         alert('error', 'Operation Failed');
+    //         alert('error', 'Booking details not found.');
     //     }
     // }
+
+    if(isset($_POST['send_status'])) {
+        $booking_id = $_POST['booking_id'];
+        $selected_status = $_POST['selected_status'];
+
+        // Perform status update operation
+        $update_query = "UPDATE bookings SET booking_status = '$selected_status' WHERE booking_id = $booking_id";
+        $update_result = mysqli_query($con, $update_query);
+
+        // Check if update was successful
+        if($update_result) {
+            alert('success', 'Status updated.');
+        } else {
+            alert('error', 'Failed to update status.');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -83,17 +110,16 @@
                             <th scope="col" class="text-center">Check-In Date</th>
                             <th scope="col"class="text-center"> Check-Out Date</th>
                             <th scope="col" class="text-center">Number of Guests</th>
-                            <th scope="col" width="20%" class="text-center">Action</th>
+                            <th scope="col" class="text-center">Status</th>
+                            <th scope="col" class="text-center">Action</th>
                         </tr>
                         <tbody id="users-data">
                             <?php
-                            // Fetch user data from the 'users' table
-                            $query = "SELECT * FROM bookings";
-                            $result = mysqli_query($con, $query);
-                            $i = 1;
-
-                            // Display user data in the table rows
-                            while ($row = mysqli_fetch_assoc($result)) {
+                             $query = "SELECT * FROM bookings";
+                             $result = mysqli_query($con, $query);
+                             $i = 1;
+                     
+                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $i++ . "</td>";
                                 echo "<td>" . $row['customer_name'] . "</td>";
@@ -101,28 +127,29 @@
                                 echo "<td>" . $row['check_in_date'] . "</td>";
                                 echo "<td>" . $row['check_out_date'] . "</td>";
                                 echo "<td>" . $row['num_guests'] . "</td>";
-                            
+                                echo "<td>" . $row['booking_status'] . "</td>";
+                    
                                 echo "<td>";
                                 echo '<form method="POST" action="">';
                                 echo '<input type="hidden" name="booking_id" value="' . $row['booking_id'] . '">';
-        
+                    
                                 // Delete button
                                 echo '<button type="submit" name="delete_user" class="btn btn-danger btn-sm ms-2">Delete</button>';
-        
-                                // Update status dropdown
-                                // echo '<select class="ms-2" name="new_status">';
-                                // echo '<option value="Active">Active</option>';
-                                // echo '<option value="Inactive">Inactive</option>';
-                                // echo '</select>';
-        
-                                // Update status button
-                                // echo '<button href="user.php" type="submit" name="update_status" class="btn btn-primary btn-sm mt-2 ms-4">Update Status</button>';
-                                // echo '</form>';
-                                // echo "</td>";
-                                // echo "</tr>";
-                               
+                    
+                                // Dropdown for selecting status
+                                echo '<select name="selected_status" class="form-select mt-2">';
+                                echo '<option value="Pending">Pending</option>';
+                                echo '<option value="Confirmed">Confirmed</option>';
+                                echo '</select>';
+                    
+                                // Send status button
+                                echo '<button type="submit" name="send_status" class="btn btn-primary btn-sm mt-2 ms-2">Update Status</button>';
+                    
+                                echo '</form>';
+                                echo "</td>";
+                                echo "</tr>";
                             }
-                            ?>
+                        ?>
                         </tbody>
                     </table>
                 </div>
