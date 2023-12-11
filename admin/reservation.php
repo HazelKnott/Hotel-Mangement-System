@@ -3,6 +3,13 @@
     require('inc/db_config.php');
     adminLogin();
 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'inc/PHPMailer/Exception.php';
+    require 'inc/PHPMailer/PHPMailer.php';
+    require 'inc/PHPMailer/SMTP.php';
+
     if(isset($_POST['delete_user'])) {
         $booking_id = $_POST['booking_id'];
 
@@ -24,32 +31,6 @@
         }
     }
 
-    // if(isset($_POST['send_email'])) {
-    //     $booking_id = $_POST['booking_id'];
-    //     $email = ''; // Fetch user email associated with this booking_id from the database
-
-    //     // Fetch the booking details
-    //     $query = "SELECT * FROM bookings WHERE booking_id = $booking_id";
-    //     $result = mysqli_query($con, $query);
-
-    //     if ($result && mysqli_num_rows($result) > 0) {
-    //         $booking_details = mysqli_fetch_assoc($result);
-    //         $status = $booking_details['booking_status'];
-
-    //         // Email content based on the booking status
-    //         $subject = "Room Reservation Status Update";
-    //         $message = "Your room reservation status is: $status";
-
-    //         // Send email
-    //         if (mail($email, $subject, $message)) {
-    //             alert('success', 'Email sent successfully.');
-    //         } else {
-    //             alert('error', 'Failed to send email.');
-    //         }
-    //     } else {
-    //         alert('error', 'Booking details not found.');
-    //     }
-    // }
 
     if(isset($_POST['send_status'])) {
         $booking_id = $_POST['booking_id'];
@@ -66,6 +47,50 @@
             alert('error', 'Failed to update status.');
         }
     }
+
+    // if(isset($_POST['send_email'])) {
+    //     $booking_id = $_POST['booking_id'];
+
+    //     $query = "SELECT * FROM bookings WHERE booking_id = $booking_id";
+    //     $result = mysqli_query($con, $query);
+
+    //     if ($result && mysqli_num_rows($result) > 0) {
+    //         $booking_details = mysqli_fetch_assoc($result);
+    //         $recipient_email = $booking_details['e_mail'];
+
+    //         $status = $booking_details['booking_status'];
+
+    //         // Email content
+    //         $subject = "Room Reservation Status Update";
+    //         $message = "Your room reservation status is: $status";
+
+    //         // Create a new PHPMailer instance
+    //         $mail = new PHPMailer();
+
+    //         // Set SMTP settings
+    //         $mail->isSMTP();
+    //         $mail->Host = 'smtp.gmail.com';
+    //         $mail->SMTPAuth = true;
+    //         $mail->Username = 'lobenaria.hazejade.bscs2021@gmail.com'; // Your Gmail address
+    //         $mail->Password = 'hazeljade173'; // Your Gmail password or App password if 2-step verification is enabled
+    //         $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
+    //         $mail->Port = 587; // TCP port to connect to
+
+    //         // Email content
+    //         $mail->setFrom('lobenaria.hazejade.bscs2021@gmail.com', 'Hazel Jade LObenaria');
+    //         $mail->addAddress($recipient_email);
+    //         $mail->Subject = $subject;
+    //         $mail->Body = $message;
+
+    //         // Send email
+    //         if ($mail->send()) {
+    //             alert('success', 'Email sent successfully.');
+    //         } else {
+    //             echo 'Mailer Error: ' . $mail->ErrorInfo;
+    //         }            
+    //    }
+    // } 
+
 ?>
 
 <!DOCTYPE html>
@@ -144,6 +169,8 @@
                     
                                 // Send status button
                                 echo '<button type="submit" name="send_status" class="btn btn-primary btn-sm mt-2 ms-2">Update Status</button>';
+
+                                echo '<button type="submit" name="send_email" class="btn btn-primary btn-sm mt-2 ms-2">Send Status Email</button>';
                     
                                 echo '</form>';
                                 echo "</td>";
