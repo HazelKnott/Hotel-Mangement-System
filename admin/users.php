@@ -3,6 +3,16 @@
     require('inc/db_config.php');
     adminLogin();
 
+    $results_per_page = 10;
+    $page = 1; // Default starting page
+
+    if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+    }
+
+    $start_index = ($page - 1) * $results_per_page;
+
+
     if(isset($_POST['delete_user'])) {
         $user_id = $_POST['user_id'];
 
@@ -122,6 +132,22 @@
                             ?>
                         </tbody>
                     </table>
+
+                    <!-- Pagination links -->
+                    <div class="text-center">
+                        <?php
+                        // Count total number of rows
+                        $count_query = "SELECT COUNT(*) AS total FROM users";
+                        $count_result = mysqli_query($con, $count_query);
+                        $row = mysqli_fetch_assoc($count_result);
+                        $total_pages = ceil($row['total'] / $results_per_page);
+
+                        // Display pagination links
+                        for ($page = 1; $page <= $total_pages; $page++) {
+                            echo '<a href="?page=' . $page . '" class="btn btn-primary btn-sm m-1">' . $page . '</a>';
+                        }
+                        ?>
+                    </div>
                 </div>
 
 						</div>
