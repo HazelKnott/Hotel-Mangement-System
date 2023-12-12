@@ -39,34 +39,56 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                 <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">Booked Details</h5>
                 <!-- Display booked details here -->
                 <?php
-                    session_start(); // Start the session
-                    // Check if the user is logged in
-                    if (isset($_SESSION['user_id'])) {
-                        // Get the logged-in user's ID
-                        $user_id = $_SESSION['user_id'];
-
-                        // Fetch and display booked details associated with the logged-in user
-                        $query = "SELECT * FROM bookings WHERE user_id = ?";
-                        $stmt = $con->prepare($query);
-                        $stmt->bind_param("i", $user_id);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                // Display booked details in the container
-                                echo "<p>Customer Name: " . $row['customer_name'] . "</p>";
-                                echo "<p>E-mail: " . $row['e_mail'] . "</p>";
-                                echo "<p>Check-in Date: " . $row['check_in_date'] . "</p>";
-                                echo "<p>Check-out Date: " . $row['check_out_date'] . "</p>";
-                                echo "<hr>"; // Adding a horizontal line for separation
-                            }
-                        } else {
-                            echo "<p>No bookings found for this user</p>";
-                        }
-                    } else {
-                        echo "<p>Please log in to view booked details</p>";
-                    }
+                  //   session_start(); 
+                  //   Start the session
+                  //   Check if the user is logged in
+                  //   if (isset($_POST['send'])) {
+                  //     Process the form submission to book a room
+                  //     Ensure you establish a database connection before this point
+                  
+                  //     Your database connection might look something like this
+                  //     $con = mysqli_connect("localhost", "username", "password", "database_name");
+                  
+                  //     Assuming the database connection is established
+                  
+                  //     $customer_name = $_POST['customer_name'];
+                  //     $room_id = $_POST['room_id'];
+                  //     $check_in_date = $_POST['check_in_date'];
+                  //     $check_out_date = $_POST['check_out_date'];
+                  //     $num_guests = $_POST['num_guests'];
+                  //     $e_mail = $_POST['e_mail'];
+                  
+                  //     $query = "INSERT INTO bookings (customer_name, room_id, check_in_date, check_out_date, num_guests, e_mail) VALUES (?, ?, ?, ?, ?, ?)";
+                  //     $stmt = $con->prepare($query);
+                  
+                  //     if ($stmt) {
+                  //         $stmt->bind_param('sissss', $customer_name, $room_id, $check_in_date, $check_out_date, $num_guests, $e_mail);
+                  //         $stmt->execute();
+                  
+                  //         if ($stmt->affected_rows > 0) {
+                  //             Booking successful
+                  //             You can add a success message or redirect the user
+                  //             echo "<script>
+                  //                     // Your success message or redirect code here
+                  //                     window.location = 'rooms.php'; // Redirect to a specific page after booking
+                  //                   </script>";
+                  //         } else {
+                  //             Booking failed
+                  //             You can display an error message or handle it accordingly
+                  //             echo "<script>
+                  //                     alert('Booking failed. Please try again.');
+                  //                   </script>";
+                  //         }
+                  
+                  //         $stmt->close();
+                  //     } else {
+                  //         Error in preparing the statement
+                  //         Handle the error appropriately
+                  //         echo "<script>
+                  //                 alert('Error in preparing the statement.');
+                  //               </script>";
+                  //     }
+                  // }
                 ?>
             </div>
                 
