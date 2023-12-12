@@ -3,12 +3,12 @@
     require('inc/db_config.php');
     adminLogin();
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+    // use PHPMailer\PHPMailer\PHPMailer;
+    // use PHPMailer\PHPMailer\Exception;
 
-    require 'inc/PHPMailer/Exception.php';
-    require 'inc/PHPMailer/PHPMailer.php';
-    require 'inc/PHPMailer/SMTP.php';
+    // require 'inc/PHPMailer/Exception.php';
+    // require 'inc/PHPMailer/PHPMailer.php';
+    // require 'inc/PHPMailer/SMTP.php';
 
     if(isset($_POST['delete_user'])) {
         $booking_id = $_POST['booking_id'];
