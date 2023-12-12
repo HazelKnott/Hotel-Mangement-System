@@ -101,6 +101,19 @@ function uploadUserImage($image){
 	}
 }
 
+function getBookingsData($con) {
+    $query = "SELECT * FROM bookings";
+    $result = mysqli_query($con, $query);
+    
+    $data = [];
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $data[] = $row;
+    }
+
+    return $data;
+}
+
 
 ?>
 

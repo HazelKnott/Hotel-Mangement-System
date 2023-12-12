@@ -12,12 +12,10 @@
 
     $start_index = ($page - 1) * $results_per_page;
 
-    // use PHPMailer\PHPMailer\PHPMailer;
-    // use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
-    // require 'inc/PHPMailer/Exception.php';
-    // require 'inc/PHPMailer/PHPMailer.php';
-    // require 'inc/PHPMailer/SMTP.php';
+    require ('vendor/autoload.php');
 
     if(isset($_POST['delete_user'])) {
         $booking_id = $_POST['booking_id'];
@@ -57,48 +55,50 @@
         }
     }
 
-    // if(isset($_POST['send_email'])) {
-    //     $booking_id = $_POST['booking_id'];
+    if(isset($_POST['send_email'])) {
+        $booking_id = $_POST['booking_id'];
 
-    //     $query = "SELECT * FROM bookings WHERE booking_id = $booking_id";
-    //     $result = mysqli_query($con, $query);
+        $query = "SELECT * FROM bookings WHERE booking_id = $booking_id";
+        $result = mysqli_query($con, $query);
 
-    //     if ($result && mysqli_num_rows($result) > 0) {
-    //         $booking_details = mysqli_fetch_assoc($result);
-    //         $recipient_email = $booking_details['e_mail'];
+        if ($result && mysqli_num_rows($result) > 0) {
+            $booking_details = mysqli_fetch_assoc($result);
+            $recipient_email = $booking_details['e_mail'];
 
-    //         $status = $booking_details['booking_status'];
+            $status = $booking_details['booking_status'];
 
-    //         // Email content
-    //         $subject = "Room Reservation Status Update";
-    //         $message = "Your room reservation status is: $status";
+            // Email content
+            $subject = "Room Reservation Status Update";
+            $message = "Your room reservation status is: $status";
 
-    //         // Create a new PHPMailer instance
-    //         $mail = new PHPMailer();
+            // Create a new PHPMailer instance
+            $mail = new PHPMailer();
 
-    //         // Set SMTP settings
-    //         $mail->isSMTP();
-    //         $mail->Host = 'smtp.gmail.com';
-    //         $mail->SMTPAuth = true;
-    //         $mail->Username = 'lobenaria.hazejade.bscs2021@gmail.com'; // Your Gmail address
-    //         $mail->Password = 'hazeljade173'; // Your Gmail password or App password if 2-step verification is enabled
-    //         $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
-    //         $mail->Port = 587; // TCP port to connect to
+            // Set SMTP settings
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'johnjoven0@gmail.com'; // Your Gmail address
+            $mail->Password = 'gbqu fuax avcd xmpm
+            '; // Your Gmail password or App password if 2-step verification is enabled
+            $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587; // TCP port to connect to
 
-    //         // Email content
-    //         $mail->setFrom('lobenaria.hazejade.bscs2021@gmail.com', 'Hazel Jade LObenaria');
-    //         $mail->addAddress($recipient_email);
-    //         $mail->Subject = $subject;
-    //         $mail->Body = $message;
+            // Email content
+            $mail->setFrom('johnjoven0@gmail.com', 'John Joven Borromeo');
+            $mail->addAddress($recipient_email);
+            $mail->Subject = $subject;
+            $mail->Body = $message;
 
-    //         // Send email
-    //         if ($mail->send()) {
-    //             alert('success', 'Email sent successfully.');
-    //         } else {
-    //             echo 'Mailer Error: ' . $mail->ErrorInfo;
-    //         }            
-    //    }
-    // } 
+            // Send email
+            if ($mail->send()) {
+                echo 'Message has been send';
+                alert('success', 'Email sent successfully.');
+            } else {
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            }            
+       }
+    } 
 
 ?>
 
@@ -110,6 +110,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Users</title>
     <?php require('inc/links.php'); ?>
+    
 </head>
 
 <body class="bg-white">
@@ -149,19 +150,19 @@
                         </tr>
                         <tbody id="users-data">
                             <?php
-                             $query = "SELECT * FROM bookings";
-                             $result = mysqli_query($con, $query);
-                             $i = 1;
-                     
-                             while ($row = mysqli_fetch_assoc($result)) {
+                            $bookingsData = getBookingsData($con);
+
+                            foreach ($bookingsData as $row) {
                                 echo "<tr>";
-                                echo "<td>" . $i++ . "</td>";
+                                // Display data in table cells
+                                // Adjust the keys based on your database structure
+                                echo "<td>" . $row['booking_id'] . "</td>";
                                 echo "<td>" . $row['customer_name'] . "</td>";
                                 echo "<td>" . $row['room_id'] . "</td>";
                                 echo "<td>" . $row['check_in_date'] . "</td>";
                                 echo "<td>" . $row['check_out_date'] . "</td>";
                                 echo "<td>" . $row['num_guests'] . "</td>";
-                                echo "<td>" . $row['booking_status'] . "</td>";
+                                echo "<td>" . $row['booking_status'] . "</td>";                                
                     
                                 echo "<td>";
                                 echo '<form method="POST" action="">';
@@ -186,6 +187,24 @@
                                 echo "</td>";
                                 echo "</tr>";
                             }
+
+                            
+                        
+                              
+                                //  $query = "SELECT * FROM bookings";
+                            //  $result = mysqli_query($con, $query);
+                            //  $i = 1;
+                     
+                            //  while ($row = mysqli_fetch_assoc($result)) {
+                            //     echo "<tr>";
+                            //     echo "<td>" . $i++ . "</td>";
+                            //     echo "<td>" . $row['customer_name'] . "</td>";
+                            //     echo "<td>" . $row['room_id'] . "</td>";
+                            //     echo "<td>" . $row['check_in_date'] . "</td>";
+                            //     echo "<td>" . $row['check_out_date'] . "</td>";
+                            //     echo "<td>" . $row['num_guests'] . "</td>";
+                            //     echo "<td>" . $row['booking_status'] . "</td>";
+
                         ?>
                         </tbody>
                     </table>

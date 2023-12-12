@@ -1,5 +1,5 @@
 <?php
-    require('inc/essentials.php');
+    require('ajax/settings_crud.php');
     adminLogin();
 ?>
 
@@ -34,12 +34,12 @@
                         <h6 class="card-subtitle mb-1 fw-bold">Site Title</h6>
                         <p class="card-text" id="site_title"></p>
                         <h6 class="card-subtitle mb-1 fw-bold">About Us</h6>
-                        <p class="card-text" id="site_about"></p>
-									</div>
+                        <p class="card-text" id="site_about"> </p>
+					</div>
                 </div>	
                 <!-- Shutdown Setting Section -->
 								
-								<div class="card border-0 shadow-sm mb-4">
+				<div class="card border-0 shadow-sm mb-4">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                       <h5 class="card-title">Shutdown Website</h5>
@@ -56,7 +56,7 @@
 								<br>
 
 								<!-- Contact Us Setting section -->
-								<div class="card border-0 shadow-sm mb-4">
+				<div class="card border-0 shadow-sm mb-4">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                       <h5 class="card-title m-0">Contact Settings</h5>
@@ -111,7 +111,7 @@
                 <!-- General Setting Modal -->
                 <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <form action="">
+                        <form action="" method="post">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="staticBackdropLabel">General Settings</h5>
@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-                                        <button type="button" onclick="upd_general(site_title.value,site_about.value)" class="btn btn-primary">SUBMIT</button>
+                                        <button type="submit" onclick="upd_general(site_title.value,site_about.value)" class="btn btn-primary">SUBMIT</button>
                                     </div>
                                 </div>
                             </form>
@@ -246,7 +246,10 @@
         xhr.open("POST", "ajax/settings_crud.php", true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         
-        xhr.onload = function(){
+        xhr.onload = function() {
+        console.log('Response received:', this.responseText);
+
+        try {
             general_data = JSON.parse(this.responseText);
 
             site_title.innerText = general_data.site_title;
@@ -254,7 +257,12 @@
 
             site_title_inp.value = general_data.site_title;
             site_about_inp.value = general_data.site_about;
+
+            console.log('Data successfully parsed and updated.');
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
         }
+        };
 
         xhr.send('get_general');
     }
@@ -266,28 +274,32 @@
 
     xhr.onload = function() {
 
-        var myModalEl = document.getElementById('general-s')
-        var modal = bootstrap.Modal.getInstance(myModal)
+        var myModalEl = document.getElementById('general-s');
+        var modal = bootstrap.Modal.getInstance(myModal);
         modal.hide();
 
         console.log(this.responseText);				
-                // general_data = JSON.parse(this.responseText);			
+        
+        if(this.responseText == 1){
+            alert('success', 'Changes saved');
+            get_general();
+        }
+        else{
+            alert('error', 'Something wrong your data is not saved');
+        }
 
-                // site_title.innerText = general_data.site_title;					
-                // site_about.innerText = general_data.site_about;	
-                    
-                // site_title_inp.value = general_data.site_title;
-                // site_about_inp.value = general_data.site_about;
     };
 
     // Corrected the parameter names and added the missing "&" between the parameters
     xhr.send('site_title=' + site_title_val + '&site_about=' + site_about_val + '&upd_general');
-}
-
 
     window.onload = function(){
         get_general();
+    };
     }
+
+
+    
 </script>
 </body>
 </html>
