@@ -71,7 +71,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
 
                                 echo '<form method="post">';
                                 echo '<input type="hidden" name="booking_id" value="' . $row['booking_id'] . '">';
-                                echo '<button type="submit" name="refund" class="btn btn-danger">Refund</button>';
+                                echo '<button type="submit" name="refund" class="btn btn-danger ms-5">Refund</button>';
                                 echo '</form>';
                             }
                         } else {
@@ -344,7 +344,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                 <form id="editBookingForm" method="post">
                     <!-- Customer Name -->
                     <div class="mb-3">
-                        <label for="user_id" class="form-label">Customer Name</label>
+                        <label for="user_id" class="form-label">Your First Name</label>
                         <input type="text" class="form-control" id="customerName" name="customer_name" placeholder="Customer's Name">
                     </div>
 
