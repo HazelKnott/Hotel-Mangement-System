@@ -35,36 +35,46 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
         <div class="col-lg-3 col-md-12 mb-lg-0 mb-md-0 mb-4 px-0">
           <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
             <div class="container-fluid flex-lg-column align-items-stretch">
-              <g4 class="mt-2">FILTERS</g4>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-controls="filterDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse flex-column" id="filterDropdown">
-                <div class="border bg-light p-3 rounded mb-3 mt-3">
-                  <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">CHECK AVAILABILITY</h5>
-                  <label class="form-label mt-3">Check-in</label>
-                  <input type="date" class="form-control shadow-none">
-                  <label class="form-label mt-3">Check-out</label>
-                  <input type="date" class="form-control shadow-none">
-                </div>
-                <div class="border bg-light p-3 rounded mb-3 mt-3">
-                  <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">GUEST</h5>
-                  <div class="me-2">
-                    <label class="form-label">Adults</label>
-                    <input type="number" class="form-control shadow-none">
-                  </div>
-                  <div class="me-2">
-                    <label class="form-label">Children</label>
-                    <input type="number" class="form-control shadow-none">
-                  </div>
+            <div class="border bg-light p-3 rounded mt-3">
+                <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">Booked Details</h5>
+                <!-- Display booked details here -->
+                <?php
+                    session_start(); // Start the session
+                    // Check if the user is logged in
+                    if (isset($_SESSION['user_id'])) {
+                        // Get the logged-in user's ID
+                        $user_id = $_SESSION['user_id'];
 
-                </div>
-              </div>
+                        // Fetch and display booked details associated with the logged-in user
+                        $query = "SELECT * FROM bookings WHERE user_id = ?";
+                        $stmt = $con->prepare($query);
+                        $stmt->bind_param("i", $user_id);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                // Display booked details in the container
+                                echo "<p>Customer Name: " . $row['customer_name'] . "</p>";
+                                echo "<p>E-mail: " . $row['e_mail'] . "</p>";
+                                echo "<p>Check-in Date: " . $row['check_in_date'] . "</p>";
+                                echo "<p>Check-out Date: " . $row['check_out_date'] . "</p>";
+                                echo "<hr>"; // Adding a horizontal line for separation
+                            }
+                        } else {
+                            echo "<p>No bookings found for this user</p>";
+                        }
+                    } else {
+                        echo "<p>Please log in to view booked details</p>";
+                    }
+                ?>
+            </div>
+                
             </div>
           </nav>
-        </div>
+      </div>
 
-        <div class="col-lg-9 col-md-12 px-4">
+         <div class="col-lg-9 col-md-12 px-4">
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
