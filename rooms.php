@@ -262,6 +262,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                         <input type="text" class="form-control" id="customerName" name="customer_name" placeholder="Customer's Name">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="e_mail" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="eMail" name="e_mail" placeholder="Type your Email">
+                    </div>
+
                     <!-- Check-in and Check-out Dates -->
                     <div class="row">
                         <div class="col-md-6">
@@ -298,14 +303,15 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
 <?php
     if (isset($_POST['send'])) {
     $frm_data = filteration($_POST);
-    $q = "INSERT INTO `bookings`(`customer_name`, `room_id`, `check_in_date`, `check_out_date`, `num_guests`) VALUES (?,?,?,?,?)";
+    $q = "INSERT INTO `bookings`(`customer_name`, `room_id`, `check_in_date`, `check_out_date`, `num_guests` , `e_mail`) VALUES (?,?,?,?,?,?)";
     $stmtinsert = $con->prepare($q);
     $values = [
         $frm_data['customer_name'],
         $frm_data['room_id'],
         $frm_data['check_in_date'],
         $frm_data['check_out_date'],
-        $frm_data['num_guests']
+        $frm_data['num_guests'],
+        $frm_data['e_mail']
     ];
 
     $stmtinsert->execute($values); // Execute the prepared statement directly
