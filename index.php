@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Check if the user is not logged in
+if (!isset($_SESSION['username'])) {
+    // Redirect to the login page or another appropriate location
+    header("Location: loginpage.php");
+    exit(); // Ensure that no further code is executed
+}
   require('inc/db_config.php')
 ?>
 

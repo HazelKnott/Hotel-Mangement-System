@@ -35,36 +35,68 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
         <div class="col-lg-3 col-md-12 mb-lg-0 mb-md-0 mb-4 px-0">
           <nav class="navbar navbar-expand-lg navbar-light bg-white rounded shadow">
             <div class="container-fluid flex-lg-column align-items-stretch">
-              <g4 class="mt-2">FILTERS</g4>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-controls="filterDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse flex-column" id="filterDropdown">
-                <div class="border bg-light p-3 rounded mb-3 mt-3">
-                  <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">CHECK AVAILABILITY</h5>
-                  <label class="form-label mt-3">Check-in</label>
-                  <input type="date" class="form-control shadow-none">
-                  <label class="form-label mt-3">Check-out</label>
-                  <input type="date" class="form-control shadow-none">
-                </div>
-                <div class="border bg-light p-3 rounded mb-3 mt-3">
-                  <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">GUEST</h5>
-                  <div class="me-2">
-                    <label class="form-label">Adults</label>
-                    <input type="number" class="form-control shadow-none">
-                  </div>
-                  <div class="me-2">
-                    <label class="form-label">Children</label>
-                    <input type="number" class="form-control shadow-none">
-                  </div>
-
-                </div>
-              </div>
+            <div class="border bg-light p-3 rounded mt-3">
+                <h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">Booked Details</h5>
+                <!-- Display booked details here -->
+                <?php
+                  //   session_start(); 
+                  //   Start the session
+                  //   Check if the user is logged in
+                  //   if (isset($_POST['send'])) {
+                  //     Process the form submission to book a room
+                  //     Ensure you establish a database connection before this point
+                  
+                  //     Your database connection might look something like this
+                  //     $con = mysqli_connect("localhost", "username", "password", "database_name");
+                  
+                  //     Assuming the database connection is established
+                  
+                  //     $customer_name = $_POST['customer_name'];
+                  //     $room_id = $_POST['room_id'];
+                  //     $check_in_date = $_POST['check_in_date'];
+                  //     $check_out_date = $_POST['check_out_date'];
+                  //     $num_guests = $_POST['num_guests'];
+                  //     $e_mail = $_POST['e_mail'];
+                  
+                  //     $query = "INSERT INTO bookings (customer_name, room_id, check_in_date, check_out_date, num_guests, e_mail) VALUES (?, ?, ?, ?, ?, ?)";
+                  //     $stmt = $con->prepare($query);
+                  
+                  //     if ($stmt) {
+                  //         $stmt->bind_param('sissss', $customer_name, $room_id, $check_in_date, $check_out_date, $num_guests, $e_mail);
+                  //         $stmt->execute();
+                  
+                  //         if ($stmt->affected_rows > 0) {
+                  //             Booking successful
+                  //             You can add a success message or redirect the user
+                  //             echo "<script>
+                  //                     // Your success message or redirect code here
+                  //                     window.location = 'rooms.php'; // Redirect to a specific page after booking
+                  //                   </script>";
+                  //         } else {
+                  //             Booking failed
+                  //             You can display an error message or handle it accordingly
+                  //             echo "<script>
+                  //                     alert('Booking failed. Please try again.');
+                  //                   </script>";
+                  //         }
+                  
+                  //         $stmt->close();
+                  //     } else {
+                  //         Error in preparing the statement
+                  //         Handle the error appropriately
+                  //         echo "<script>
+                  //                 alert('Error in preparing the statement.');
+                  //               </script>";
+                  //     }
+                  // }
+                ?>
+            </div>
+                
             </div>
           </nav>
-        </div>
+      </div>
 
-        <div class="col-lg-9 col-md-12 px-4">
+         <div class="col-lg-9 col-md-12 px-4">
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
@@ -262,6 +294,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                         <input type="text" class="form-control" id="customerName" name="customer_name" placeholder="Customer's Name">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="e_mail" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="eMail" name="e_mail" placeholder="Type your Email">
+                    </div>
+
                     <!-- Check-in and Check-out Dates -->
                     <div class="row">
                         <div class="col-md-6">
@@ -298,14 +335,15 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
 <?php
     if (isset($_POST['send'])) {
     $frm_data = filteration($_POST);
-    $q = "INSERT INTO `bookings`(`customer_name`, `room_id`, `check_in_date`, `check_out_date`, `num_guests`) VALUES (?,?,?,?,?)";
+    $q = "INSERT INTO `bookings`(`customer_name`, `room_id`, `check_in_date`, `check_out_date`, `num_guests` , `e_mail`) VALUES (?,?,?,?,?,?)";
     $stmtinsert = $con->prepare($q);
     $values = [
         $frm_data['customer_name'],
         $frm_data['room_id'],
         $frm_data['check_in_date'],
         $frm_data['check_out_date'],
-        $frm_data['num_guests']
+        $frm_data['num_guests'],
+        $frm_data['e_mail']
     ];
 
     $stmtinsert->execute($values); // Execute the prepared statement directly

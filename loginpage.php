@@ -1,5 +1,56 @@
 <?php
-  require('inc/db_config.php')
+
+session_start();
+require('inc/db_config.php');
+if(isset($_POST['create'])){
+  // Assuming you have a database connection object $con
+  // Make sure to replace 'your_table_name' with the actual table name
+  $query = "INSERT INTO users (username, firstname, lastname, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?)";
+  $stmtinsert = $con->prepare($query);
+
+  $username = $_POST['username'];
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['lastname'];
+  $email = $_POST['email'];
+  $phonenumber = $_POST['phonenumber'];
+  $password = $_POST['password'];
+
+  $result = $stmtinsert->execute([$username, $firstname, $lastname, $email, $phonenumber, $password]);
+
+}
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Query to check user credentials
+    $query = "SELECT * FROM users WHERE username = ? AND password = ?";
+    $stmtselect = $con->prepare($query);
+
+    if ($stmtselect) {
+        $stmtselect->bind_param('ss', $username, $password);
+        $stmtselect->execute();
+        $result = $stmtselect->get_result();
+
+        if ($result->num_rows > 0) {
+            // If login is successful, set session variables and redirect to index.php
+            $_SESSION['username'] = $username; // Assuming username is unique
+
+            // Close prepared statement
+            $stmtselect->close();
+
+            // Redirect to index.php
+            header("Location: index.php");
+            exit();
+        } else {
+            // If login fails, display an error message
+            echo 'Invalid username or password';
+        }
+
+        $stmtselect->close();
+    } else {
+        echo 'Error in preparing the statement';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,55 +72,6 @@
 </head>
 <body class="bg-light">
 
-<?php
-    
-    if (isset($_POST['login'])) {
-        // Assuming you have a database connection object $con
-        // Make sure to replace 'your_table_name' with the actual table name
-        $query = "SELECT * FROM users WHERE username = ? AND password = ?";
-        $stmtselect = $con->prepare($query);
-    
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-    
-        $stmtselect->bind_param('ss', $username, $password); // Assuming both username and password are strings
-    
-        $stmtselect->execute();
-        $stmtselect->store_result();
-    
-        if ($stmtselect->num_rows > 0) {
-            // Login successful
-            echo '1';
-            header("Location: index.php");
-        } else {
-            // Login failed
-            echo 'Invalid username or password';
-        }
-        
-        $stmtselect->close();
-
-    }
-    
-    if(isset($_POST['create'])){
-        // Assuming you have a database connection object $con
-        // Make sure to replace 'your_table_name' with the actual table name
-        $query = "INSERT INTO users (username, firstname, lastname, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmtinsert = $con->prepare($query);
-
-        $username = $_POST['username'];
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        $email = $_POST['email'];
-        $phonenumber = $_POST['phonenumber'];
-        $password = $_POST['password'];
-
-        $result = $stmtinsert->execute([$username, $firstname, $lastname, $email, $phonenumber, $password]);
-
-    }
-?> 
-    <!-- fix the redirecting issue -->
-
-
     <div class="login-form text-center rounded bg-white shadow overflow-hidden">
         <form method="POST">
             <h4 class="bg-dark text-white py-3">LOGIN</h4>
@@ -85,33 +87,33 @@
     
 
     <!-- Login Modal -->
-  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title d-flex align-items-center" id="staticBackdropLabel">
-            <i class="bi bi-person-circle fs-3- me-2"></i> User Login </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="index.php" method="post">
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control border border-dark" id="username" name="username" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control border border-dark" id="password" name="password">
-            </div>
-            <div class="mb-5 d-flex justify-content-between align-items-center">
-              <button type="submit" name="login" class="btn btn-primary">Login</button>
-              <a href="javascript: void(0)">Forgot Password</a>
-            </div>
-          </form>
-        </div>
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title d-flex align-items-center" id="staticBackdropLabel">
+          <i class="bi bi-person-circle fs-3- me-2"></i> User Login </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="loginpage.php" method="post">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control border border-dark" id="username" name="username" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control border border-dark" id="password" name="password">
+          </div>
+          <div class="mb-5 d-flex justify-content-between align-items-center">
+            <button type="submit" name="login" class="btn btn-primary">Login</button>
+            <a href="javascript: void(0)">Forgot Password</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
   <!-- Register Modal -->
   <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
