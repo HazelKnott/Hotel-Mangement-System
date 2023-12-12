@@ -59,7 +59,47 @@
 		<!-- Add Room Modal -->
 
 
-							<!-- feature and facilities -->
+		<div class="modal fade" id="add-room" data-bs-backdrop="statics" data-bs-keyboard="true" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <form id="add_room_form" autocomplete="off">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Room</h5>
+                </div>
+  		 <div class="modal-body">
+  		<div class="row">
+    	 <div class="col-md-6 mb-3">
+       	 <label class="form-label- fw-bold">Name</label>
+         <input type="text" name="name" class="form-control shadow-none" required>
+ </div>
+      	<div class="col-md-6 mb-3">
+        <label class="form-label- fw-bold">Area</label>
+         <input type="number" min="1" name="area" class="form-control shadow-none" required>
+ 	 </div>
+         <div class="col-md-6 mb-3">
+         <label class="form-label- fw-bold">Price</label>
+         <input type="number" min="1" name="price" class="form-control shadow-none" required>
+    </div>
+         <div class="col-md-6 mb-3">
+	     <label class="form-label- fw-bold">Quantity</label>
+        <input type="number" min="1" name="quantity" class="form-control shadow-none" required>
+     </div>
+ 		 <div class="col-md-6 mb-3">
+       <label class="form-label- fw-bold">Adult (Max.)</label>
+        <input type="number" min="1" name="adult" class="form-control shadow-none" required>
+    </div>
+        <div class="col-md-6 mb-3">
+        <label class="form-label- fw-bold">Children (Max.)</label>
+         <input type="number" min="1" name="children" class="form-control shadow-none" required>
+	 </div>
+			<div class="col-12 mb-3">
+			<label class="form-label fw-bold">Description</label>
+			<textarea name="desc" rows="4"class="form-control shadow-none"required></textarea>
+			</div>
+	
+	
+
+	<!-- feature and facilities -->
 							<!-- <div class="col-12 mb-3">
 								<label class="form-label fw-bold">Features</label>
 								<div class="row">
