@@ -3,6 +3,15 @@
     require('inc/db_config.php');
     adminLogin();
 
+    $results_per_page = 10;
+    $page = 1; // Default starting page
+
+    if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+    }
+
+    $start_index = ($page - 1) * $results_per_page;
+
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
@@ -116,9 +125,9 @@
 					<div class="card border-0 shadow-sm mb-4">
 						<div class="card-body">
 
-							<div class="text-end mb-4">
+							<!-- <div class="text-end mb-4">
 								<input type="text" class="form-control shadow-none w-25 ms-auto" placeholder="Find User name">
-							</div>
+							</div> -->
 							
 							<!-- <div class="text-end mb-4">
 								<button class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add-room">
@@ -137,7 +146,7 @@
                             <th scope="col"class="text-center"> Check-Out Date</th>
                             <th scope="col" class="text-center">Number of Guests</th>
                             <th scope="col" class="text-center">Status</th>
-                            <th scope="col" class="text-center">Action</th>
+                            <th scope="col" width="30%" class="text-center">Action</th>
                         </tr>
                         <tbody id="users-data">
                             <?php
@@ -163,15 +172,16 @@
                                 echo '<button type="submit" name="delete_user" class="btn btn-danger btn-sm ms-2">Delete</button>';
                     
                                 // Dropdown for selecting status
-                                echo '<select name="selected_status" class="form-select mt-2">';
+                                echo '<select name="selected_status" class="ms-2 p-1 mt-1">';
                                 echo '<option value="Pending">Pending</option>';
                                 echo '<option value="Confirmed">Confirmed</option>';
                                 echo '</select>';
+                                
                     
                                 // Send status button
-                                echo '<button type="submit" name="send_status" class="btn btn-primary btn-sm mt-2 ms-2">Update Status</button>';
+                                echo '<button type="submit" name="send_status" class="btn btn-primary btn-sm mt-2 ms-3 mb-2">Update Status</button>';
 
-                                echo '<button type="submit" name="send_email" class="btn btn-primary btn-sm mt-2 ms-2">Send Status Email</button>';
+                                echo '<button type="submit" name="send_email" class="btn btn-primary btn-m mt-2 ms-5">Send Status Email</button>';
                     
                                 echo '</form>';
                                 echo "</td>";
@@ -198,6 +208,19 @@
                         ?>
                         </tbody>
                     </table>
+                    <div class="text-center">
+                        <?php
+                        // Count total number of rows
+                        $count_query = "SELECT COUNT(*) AS total FROM users";
+                        $count_result = mysqli_query($con, $count_query);
+                        $row = mysqli_fetch_assoc($count_result);
+                        $total_pages = ceil($row['total'] / $results_per_page);
+
+                        // Display pagination links
+                        for ($page = 1; $page <= $total_pages; $page++) {
+                            echo '<a href="?page=' . $page . '" class="btn btn-primary btn-sm m-1">' . $page . '</a>';
+                        }
+                        ?>
                 </div>
 
 						</div>
