@@ -11,6 +11,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,9 @@ if (!isset($_SESSION['username'])) {
     <?php require('inc/links.php') ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
+  
+
+  </head>
 <body class="bg-light">
   <?php require('inc/header_index.php') ?>
 

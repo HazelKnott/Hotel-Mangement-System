@@ -16,7 +16,7 @@ if(isset($_POST['create'])){
   $password = $_POST['password'];
 
   $result = $stmtinsert->execute([$username, $firstname, $lastname, $email, $phonenumber, $password]);
-
+  header("Location: index.php");
 }
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -58,7 +58,7 @@ if (isset($_POST['login'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Tranquil Hotel</title>
   <?php require('inc/links.php') ?>
   <style>
         div.login-form {
