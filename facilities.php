@@ -45,7 +45,7 @@
       <div class="col-lg-4 col-md-6 mb-5 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-          <i class='fas fa-biking' style='font-size:36px'></i>
+          <img src="images/facilities2/fitness.png" width="40px" alt="">
             <h5 class="ms-3">Fitness Room</h5>
           </div>
           <p>
@@ -57,8 +57,8 @@
       <div class="col-lg-4 col-md-6 mb-5 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <i class='fas fa-biking' style='font-size:36px'></i>
-            <h5 class="ms-3">Sauna</h5>
+          <img src="images/facilities2/poolicon.png" width="40px" alt="">
+            <h5 class="ms-3">Sauna & Pool</h5>
           </div>
           <p>
           Our state-of-the-art facilities include a rejuvenating sauna and a refreshing pool, providing the perfect escape for relaxation and revitalization.
@@ -67,7 +67,7 @@
       <div class="col-lg-4 col-md-6 mb-5 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <img src="images/facilities2/iconpet.png" width="40px" alt="">
             <h5 class="ms-3">Pet Friendly at a surcharge</h5>
           </div>
           <p>
@@ -78,7 +78,7 @@
       <div class="col-lg-4 col-md-6 mb-5 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <img src="images/facilities2/iconalcohol.png" width="40px" alt="">
             <h5 class="ms-3">Bar</h5>
           </div>
           <p>
@@ -89,7 +89,7 @@
       <div class="col-lg-4 col-md-6 mb-5 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <img src="images/facilities2/luggageicon.jpg" width="40px" alt="">
             <h5 class="ms-3">Luggage Storage</h5>
           </div>
           <p>
