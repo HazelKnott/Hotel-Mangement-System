@@ -11,7 +11,7 @@ function displayUserInfo($firstName, $lastName)
 }
 
 $firstName = 'Hazel';
-$lastName = 'Lobi';
+$lastName = 'Lobe';
 $username = '';
 
 if (isset($_GET['username'])) {
