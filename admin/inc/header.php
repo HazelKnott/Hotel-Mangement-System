@@ -21,6 +21,9 @@
                             <a class="nav-link text-light" href="rooms.php">Rooms</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-light" href="categories.php">Room Categories</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-light" href="reservation.php">Bookings</a>
                         </li>
                         <li class="nav-item">
