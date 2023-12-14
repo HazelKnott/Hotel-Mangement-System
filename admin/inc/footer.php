@@ -1,50 +1,3 @@
-<!-- Footer -->
-<div class="container-fluid bg-whte border-top border-dark mt-5 mb-2">
-    <div class="row align-items-center">
-      <div class="column">
-        <div class="card shadow-none border-0">
-        <h3 class="fw-bold fs-3 mb-2">Tranquil Hotel</h3>
-        <p>
-        Our tranquil hotel will ensure you that not only will you be able to stay here comfortably but also enjoy the quality of our hotel examples, our gym, sauna pool, and so on. 
-        Our Trnaquil Hotel will give you heaven not only the rooms but also our services. Tranquil Hotel will wait for you!
-        </p>
-       </div>
-
-      </div>
-      <div class="column">
-        <div class="card shadow-none border-0">
-        <h5 class="text-center mb-3">Links</h5>
-        <a href="index.php" class="d-inline-block  text-center mb-2 text-dark text-decoration-none">Home</a>
-        <a href="rooms.php" class="d-inline-block mb-2 text-center text-dark text-decoration-none">Rooms</a>
-        <a href="facilities.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">Facilities</a>
-        <a href="contact.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">Contact Us</a>
-        <a href="about.php" class="d-inline-block text-center mb-2 text-dark text-decoration-none">About Us</a>
-        </div>
-      </div>
-
-      <div class="column">
-       <div class="card shadow-none border-0">
-        <h5 class="text-center mb-3">Follow Us</h5>
-        <a href="#" class="text-center d-inline-block mb-2 text-dark text-decoration-none">
-          <i class="bi bi-facebook"> </i>Facebook
-        </a><br>
-        <a href="#" class="text-center d-inline-block mb-2 text-dark text-decoration-none">
-        <i class="bi bi-instagram"></i>Instagram
-        </a><br>
-        <a href="#" class="text-center d-inline-block mb-2 text-dark text-decoration-none">
-        <i class="bi bi-twitter"></i> Twitter
-        </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="alert alert-dismissible fade show" role="alert">
-  <strong class="me-3"></strong>
-  <button type="button">
-    <!-- <a href="../admin/index.php"></a> -->
-  </button>
-</div>
 
 <!-- <script>
 
@@ -183,3 +136,8 @@ window.alert_toast= function($msg = 'TEST',$bg = 'success'){
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- <script src="js/bootstrap.bundle.js"></script>
+        <script src="js/bootstrap.bundle.js.map"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js.map"></script>
+        <script src="js/bootstrap.js"></script> -->
