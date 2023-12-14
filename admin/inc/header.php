@@ -17,9 +17,9 @@
                             <a class="nav-link text-light" href="dashboard.php">Dashboard</a>
                         </li>
                         
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link text-light" href="rooms.php">Rooms</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link text-light" href="categories.php">Room Categories</a>
                         </li>

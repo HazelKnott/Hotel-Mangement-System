@@ -3,8 +3,7 @@
 session_start();
 require('inc/db_config.php');
 if(isset($_POST['create'])){
-  // Assuming you have a database connection object $con
-  // Make sure to replace 'your_table_name' with the actual table name
+ 
   $query = "INSERT INTO users (username, firstname, lastname, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?)";
   $stmtinsert = $con->prepare($query);
 
@@ -22,7 +21,6 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Query to check user credentials
     $query = "SELECT * FROM users WHERE username = ? AND password = ?";
     $stmtselect = $con->prepare($query);
 
@@ -32,25 +30,20 @@ if (isset($_POST['login'])) {
         $result = $stmtselect->get_result();
 
         if ($result->num_rows > 0) {
-            // If login is successful, set session variables and redirect to index.php
-            $_SESSION['username'] = $username; // Assuming username is unique
-
-            // Close prepared statement
+          
+            $_SESSION['username'] = $username; 
             $stmtselect->close();
-
-            // Redirect to index.php
             header("Location: index.php");
             exit();
         } else {
-            // If login fails, display an error message
             echo 'Invalid username or password';
         }
 
         $stmtselect->close();
-    } else {
+           } else {
         echo 'Error in preparing the statement';
-    }
-}
+       }
+  }
 ?>
 
 <!DOCTYPE html>

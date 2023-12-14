@@ -1,5 +1,5 @@
 <?php
-// Function to display user info if logged in
+
 function displayUserInfo($firstName, $lastName)
 {
     if (!empty($firstName) && !empty($lastName)) {
@@ -10,34 +10,30 @@ function displayUserInfo($firstName, $lastName)
     }
 }
 
-// Initialize the variables
 $firstName = 'Hazel';
 $lastName = 'Lobe';
-$username = 'username';
+$username = '';
 
-// Check if a user identifier is sent via GET (Replace 'username' with your variable name)
 if (isset($_GET['username'])) {
     $username = htmlspecialchars($_GET['username']);
 
-    // Include your database configuration
     require('inc/db_config.php');
 
-    // Prepare a SQL statement to fetch the user's first name and last name from the 'users' table
-    $stmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE username = username");
-    $stmt->bindParam('ss', $firstName, $lastName);
+    $stmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE username = :username");
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->execute();
 
-    // Fetch the user data
-    
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC); 
+
     if ($userData) {
-        $firstName = $data['firstname'];
-        $lastName = $data['lastname'];
+        $firstName = $userData['firstname'];
+        $lastName = $userData['lastname'];
     }
 
-    // Close the connection
     $conn = null;
 }
 ?>
+
 
 
 
