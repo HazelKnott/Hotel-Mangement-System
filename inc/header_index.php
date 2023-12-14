@@ -1,3 +1,45 @@
+<?php
+// Function to display user info if logged in
+function displayUserInfo($firstName, $lastName)
+{
+    if (!empty($firstName) && !empty($lastName)) {
+        echo '<div class="d-flex align-items-center me-3">';
+        echo '<span class="me-2">Welcome, ' . $firstName . ' ' . $lastName . '</span>';
+        echo '<a href="logout.php" class="btn btn-light btn-sm">Log-out</a>';
+        echo '</div>';
+    }
+}
+
+// Initialize the variables
+$firstName = 'Hazel';
+$lastName = 'Lobe';
+$username = 'username';
+
+// Check if a user identifier is sent via GET (Replace 'username' with your variable name)
+if (isset($_GET['username'])) {
+    $username = htmlspecialchars($_GET['username']);
+
+    // Include your database configuration
+    require('inc/db_config.php');
+
+    // Prepare a SQL statement to fetch the user's first name and last name from the 'users' table
+    $stmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE username = username");
+    $stmt->bindParam('ss', $firstName, $lastName);
+    $stmt->execute();
+
+    // Fetch the user data
+    
+    if ($userData) {
+        $firstName = $data['firstname'];
+        $lastName = $data['lastname'];
+    }
+
+    // Close the connection
+    $conn = null;
+}
+?>
+
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-2 shadow-sm sticky-top">
@@ -24,7 +66,7 @@
             <a class="nav-link p-2 bd-highlight me-3" href="about.php">About Us</a>
           </li>
         </ul>
-        <a href="logout.php" class="btn btn-light btn-sm">Log-out</a>
+        <?php displayUserInfo($firstName, $lastName); ?>
      </div>
 </div>
 

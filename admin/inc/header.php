@@ -32,9 +32,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="user_message.php">User Concern</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link text-light" href="settings.php">Settings</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

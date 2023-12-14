@@ -31,21 +31,21 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
+    <div class="col-lg-4 col-md-4 mb-4 px-6">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
             <img src="images/facilities2/wifi.png" width="40px" alt="">
-            <h5 class="ms-3">Complimentary Wi-fi internet throughout the entaire hotel</h5>
+            <h5 class="ms-3">Complimentary Wi-fi internet</h5>
           </div>
           <p>
-          That's why we are pleased to offer complimentary Wi-Fi internet access throughout the entire hotel, ensuring you can effortlessly stay in touch and make the most of your time with us.
+          The hotel is delighted to provide free Wi-Fi access across the entire premises, allowing guests to easily stay connected and maximize their time during their stay.
           </p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
+      <div class="col-lg-4 col-md-5 mb-6 px-6">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-          <i class='fas fa-biking' style='font-size:36px'></i>
+          <img src="images/facilities2/fitness.png" width="40px" alt="">
             <h5 class="ms-3">Fitness Room</h5>
           </div>
           <p>
@@ -57,43 +57,43 @@
       <div class="col-lg-4 col-md-6 mb-5 px-4">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <i class='fas fa-biking' style='font-size:36px'></i>
-            <h5 class="ms-3">Sauna</h5>
+          <img src="images/facilities2/poolicon.png" width="40px" alt="">
+            <h5 class="ms-3">Sauna & Pool</h5>
           </div>
           <p>
           Our state-of-the-art facilities include a rejuvenating sauna and a refreshing pool, providing the perfect escape for relaxation and revitalization.
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
+      <div class="col-lg-4 col-md-5 mb-5 px-6">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <img src="images/facilities2/iconpet.png" width="40px" alt="">
             <h5 class="ms-3">Pet Friendly at a surcharge</h5>
           </div>
           <p>
-          At Tranquila Hitel, we understand that pets are cherished members of your family, and we're delighted to welcome both you and your four-legged companions to our pet-friendly haven.
+          At Tranquila Hitel, we understand that pets are cherished members of your family, and we're delighted to welcome to our pet-friendly haven.
           </p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
+      <div class="col-lg-4 col-md-7 mb-7 px-6">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <img src="images/facilities2/iconalcohol.png" width="40px" alt="">
             <h5 class="ms-3">Bar</h5>
           </div>
           <p>
-          Bar facilities in our hotels aim to enhance the overall guest experience by offering a space for socializing, relaxation, and enjoyment of quality beverages. 
+          Bar facilities in our hotels aim to enhance the overall guest experience by offering a space for socializing, relaxation, and enjoyment of quality beverages.
           </p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mb-5 px-4">
+      <div class="col-lg-4 col-md-5 mb-5 px-6">
         <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
           <div class="d-flex">
-            <img src="images/facilities2/wifi.png" width="40px" alt="">
+            <img src="images/facilities2/luggageicon.jpg" width="40px" alt="">
             <h5 class="ms-3">Luggage Storage</h5>
           </div>
           <p>
-          Arriving early or departing late? No worries. Our luggage storage facilities are designed to make your transition seamless, allowing you to maximize every moment of your stay without the burden of heavy bags.
+          Our luggage storage facilities are designed to make your transition seamless, allowing you to maximize every moment of your stay without the burden of heavy bags.
           </p>
         </div>
       </div>

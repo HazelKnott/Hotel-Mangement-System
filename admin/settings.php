@@ -297,9 +297,37 @@
         get_general();
     };
     }
+ 
+</script>
 
+<script>
+  function updateContactSettings() {
+    let address = document.getElementById('address_inp').value;
+    let gmap = document.getElementById('gmap_inp').value;
+    let email = document.getElementById('email_inp').value;
+    // ... gather other contact settings data similarly
 
-    
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "contact.php", true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function() {
+      if (this.responseText === 'success') {
+        alert('Contact settings updated successfully');
+        // Optionally, update the UI or do something upon successful update
+      } else {
+        alert('Error updating contact settings');
+      }
+    };
+
+    xhr.send('address=' + address + '&gmap=' + gmap + '&email=' + email + '&update_contact_settings');
+  }
+
+  // Event listener for modal submit button
+  document.getElementById('submit_contact_settings').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    updateContactSettings(); // Call the function to update contact settings
+  });
 </script>
 </body>
 </html>

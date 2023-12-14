@@ -39,11 +39,9 @@
     </div>
   </div>
 
-<div class="alert alert-dismissible fade show" role="alert">
+<div>
   <strong class="me-3"></strong>
-  <button type="button">
-    <!-- <a href="../admin/index.php"></a> -->
-  </button>
+    <a href="admin/index.php" class="btn btn-sm btn-light btn-outline-dark"></a>
 </div>
 
 <!-- <script>

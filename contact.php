@@ -14,11 +14,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet"href="css/style.css">
+     
+
     
 </head>
 <body class="bg-light">
 
   <?php require('inc/header_index.php'); ?>
+
+  <style>
+    /* Adjust the position of the alert */
+    .custom-alert {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000; /* To make sure it's on top of other elements */
+    }
+
+    .navbar {
+        z-index: 900; /* Lower z-index than the alert */
+    }
+
+    /* Customize the alert to make it small */
+    .custom-alert .alert {
+        padding: 5px 10px; /* Adjust padding */
+        font-size: 14px; /* Adjust font size */
+        border-radius: 4px; /* Add border radius */
+    }
+</style>
 
     <div class="my-5px-4">
       <h2 class="fw-bold h-font text-center">OUR CONTACT</h2>
@@ -108,6 +131,7 @@
       }
    }
  ?>
+ 
   <?php require('inc/footer.php'); ?>
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
