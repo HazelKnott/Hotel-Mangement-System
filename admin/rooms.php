@@ -145,12 +145,6 @@
 		data.append('desc', add_room_form.element['desc'].value);
 
 
-		// let features = [];
-		// add_rooms_form.element['features'].forEach(el =>(
-		// 	if(el.checked){
-		// 		features.push(el.value);
-		// 	}
-		// ));
 		
 		
 		
