@@ -12,7 +12,7 @@
         $bookingsCount = $rowBookings['total_bookings'];
     }
 
-    // Count rows for 'refunds'
+   
     $refundsCount = 0; // Initialize the count to 0
     $queryRefunds = "SELECT COUNT(*) as total_refunds FROM refunds";
     $resultRefunds = mysqli_query($con, $queryRefunds);
@@ -22,7 +22,7 @@
         $refundsCount = $rowRefunds['total_refunds'];
     }
 
-    // Count rows for 'user_message'
+  
     $userQueriesCount = 0; // Initialize the count to 0
     $queryUserQueries = "SELECT COUNT(*) as total_user_queries FROM user_message";
     $resultUserQueries = mysqli_query($con, $queryUserQueries);

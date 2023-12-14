@@ -4,7 +4,7 @@
     adminLogin();
 
     $results_per_page = 10;
-    $page = 1; // Default starting page
+    $page = 1; 
 
     if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -16,11 +16,9 @@
     if(isset($_POST['delete_user'])) {
         $user_id = $_POST['user_id'];
 
-        // Perform delete operation here using user_id
         $query = "DELETE FROM users WHERE id = $user_id";
         $delete_result = mysqli_query($con, $query);
 
-        // Check if delete was successful
         if($delete_result) {
             alert('success', 'Deleted.');
         } else {
@@ -32,11 +30,10 @@
         $user_id = $_POST['user_id'];
         $new_status = $_POST['new_status'];
 
-        // Perform status update operation here using user_id and new_status
+        
         $update_query = "UPDATE users SET status = '$new_status' WHERE id = $user_id";
         $update_result = mysqli_query($con, $update_query);
 
-        // Check if update was successful
         if($update_result) {
             alert('success', 'Updated');
         } else {
@@ -80,7 +77,7 @@
 							<div class="table-responsive-ld" style="min-height: 1300px">
                     <table class="table table-hover border">
                         <tr class="bg-dark text-light">
-                            <!-- Table headers -->
+                     
                             <th scope="col">#</th>
                             <th scope="col">User name</th>
                             <th scope="col">First Name</th>
@@ -93,12 +90,11 @@
                         </tr>
                         <tbody id="users-data">
                             <?php
-                            // Fetch user data from the 'users' table
+                            
                             $query = "SELECT * FROM users";
                             $result = mysqli_query($con, $query);
                             $i = 1;
 
-                            // Display user data in the table rows
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $i++ . "</td>";
@@ -113,16 +109,13 @@
                                 echo '<form method="POST" action="">';
                                 echo '<input type="hidden" name="user_id" value="' . $row['id'] . '">';
         
-                                // Delete button
                                 echo '<button type="submit" name="delete_user" class="btn btn-danger btn-sm ms-2">Delete</button>';
-        
-                                // Update status dropdown
+         
                                 echo '<select class="ms-2" name="new_status">';
                                 echo '<option value="Active">Active</option>';
                                 echo '<option value="Inactive">Inactive</option>';
                                 echo '</select>';
         
-                                // Update status button
                                 echo '<button href="user.php" type="submit" name="update_status" class="btn btn-primary btn-sm mt-2 ms-4">Update Status</button>';
                                 echo '</form>';
                                 echo "</td>";
@@ -136,13 +129,13 @@
                     <!-- Pagination links -->
                     <div class="text-center">
                         <?php
-                        // Count total number of rows
+                        
                         $count_query = "SELECT COUNT(*) AS total FROM users";
                         $count_result = mysqli_query($con, $count_query);
                         $row = mysqli_fetch_assoc($count_result);
                         $total_pages = ceil($row['total'] / $results_per_page);
 
-                        // Display pagination links
+                      
                         for ($page = 1; $page <= $total_pages; $page++) {
                             echo '<a href="?page=' . $page . '" class="btn btn-primary btn-sm m-1">' . $page . '</a>';
                         }

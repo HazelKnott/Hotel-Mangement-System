@@ -14,7 +14,6 @@ if (isset($_POST['login'])) {
     $query = "SELECT * FROM `admin_cred` WHERE `admin_name`=? AND `admin_pass`=?";
     $values = [$frm_data['admin_name'], $frm_data['admin_pass']];
 
-    // Assuming your select function is correctly implemented and returns a mysqli_result object
     $res = select($query, $values, "ss");
 
     if ($res->num_rows == 1) {

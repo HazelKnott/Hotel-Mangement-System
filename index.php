@@ -30,8 +30,7 @@ if (!isset($_SESSION['username'])) {
   <!-- register function -->
   <?php
     if(isset($_POST['create'])){
-        // Assuming you have a database connection object $con
-        // Make sure to replace 'your_table_name' with the actual table name
+       
         $query = "INSERT INTO users (username, firstname, lastname, email, phonenumber, password) VALUES (?, ?, ?, ?, ?, ?)";
         $stmtinsert = $con->prepare($query);
 

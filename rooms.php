@@ -45,8 +45,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                 <?php
                   if (isset($_SESSION['username'])) {
                     $username = $_SESSION['username'];
-                
-                    // Query to fetch booking details for the logged-in user from 'bookings' and 'users' tables
                     $query = "SELECT b.* FROM bookings b JOIN users u ON b.customer_name = u.firstname WHERE u.username = ?";
                     
                     $stmt = $con->prepare($query);
@@ -59,15 +57,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                         if ($result->num_rows > 0) {
                             echo '<h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">Booked Details</h5>';
                             while ($row = $result->fetch_assoc()) {
-                                // Display booked details in the container
+                               
                                 echo '<p>Customer Name: ' . $row['customer_name'] . '</p>';
                                 echo '<p>Room Number: ' . $row['room_id'] . '</p>';
                                 echo '<p>Check-In Date: ' . $row['check_in_date'] . '</p>';
                                 echo '<p>Check-Out Date: ' . $row['check_out_date'] . '</p>';
                                 echo '<p>Number of Guests: ' . $row['num_guests'] . '</p>';
                 
-                                // Display other booked details as needed
-                                // You can format the output according to your HTML structure
+                               
 
                                 echo '<form method="post">';
                                 echo '<input type="hidden" name="booking_id" value="' . $row['booking_id'] . '">';
@@ -88,60 +85,50 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                 ?>
 
 <?php
-  if (isset($_POST['refund'])) {
+if (isset($_POST['refund'])) {
     $booking_id = $_POST['booking_id'];
-    $refund_amount = 100.00; // Replace this with the actual refund amount
-    $refund_reason = "Customer request"; // Replace this with the reason for the refund (if available)
-
-    // Perform refund logic here
-    // Example: Update the booking status or perform refund-related actions in the database
-
-    // Insert refund details into the refunds table
+    $refund_amount = 100.00; 
+    $refund_reason = "Customer request"; 
     $query = "INSERT INTO refunds (booking_id, refund_amount, refund_reason) VALUES (?, ?, ?)";
     $stmt = $con->prepare($query);
 
     if ($stmt) {
-      $stmt->bind_param('ids', $booking_id, $refund_amount, $refund_reason);
-      $stmt->execute();
+        $stmt->bind_param('ids', $booking_id, $refund_amount, $refund_reason);
+        $stmt->execute();
 
-      // Check if the refund insertion was successful
-      if ($stmt->affected_rows > 0) {
-        // Perform any other necessary actions upon successful refund insertion
-        // For example, update the booking status to 'refunded' in the bookings table
-        // Display a success message for the refund
-        echo '<script>
-          const Toast = Swal.mixin({
-            toast: true,
-            position: top-end,
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener(mouseenter, Swal.stopTimer)
-              toast.addEventListener(mouseleave, Swal.resumeTimer)
-            }
-          });
+        if ($stmt->affected_rows > 0) {
+            echo '<script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Refund Successful",
+                    text: "The refund has been successfully processed."
+                });
+            </script>';
+        } else {
+            echo '<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Refund Failed",
+                    text: "Failed to process the refund. Please try again."
+                });
+            </script>';
+        }
 
-          Toast.fire({
-            icon: success,
-            title: Refund Successful,
-            text: The refund has been successfully processed.
-          });
-        </script>';
-      } else {
-        // Display an error message if the refund insertion failed
-        echo '<script>
-          // Similar to the success message, you can show an error message here
-        </script>';
-      }
-
-      $stmt->close();
+        $stmt->close();
     } else {
-      // Handle the case where the statement preparation failed
-      // Display an error message or perform appropriate actions
+        echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Error in preparing the statement."
+            });
+        </script>';
     }
-  }
+}
 ?>
+
+
+
 
                 
             </div>
@@ -400,8 +387,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
         $frm_data['e_mail']
     ];
 
-    $stmtinsert->execute($values); // Execute the prepared statement directly
-
+    $stmtinsert->execute($values); 
     if ($stmtinsert->affected_rows > 0) {
         echo "<script>
             const Toast = Swal.mixin({
@@ -445,7 +431,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
     }
 }
   
-  
+  // hi
 ?>
 
   
