@@ -65,11 +65,12 @@
     }
 ?>
 
-
+<br><br><br>
+<br><br><br>	
 
 
 <div class="container-fluid" >
-	
+
 	<div class="col-lg-10 ms-auto p-4 overflow-hidden">
 		<div class="row">
 			<!-- FORM Panel -->
