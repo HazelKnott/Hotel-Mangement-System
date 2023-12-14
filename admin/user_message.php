@@ -21,9 +21,7 @@
 	if (isset($_GET['del'])) {
         $frm_data = filteration($_GET);
         if ($frm_data['del'] == 'all') {
-            // Handle 'del' condition when 'all' is passed
         } else {
-            // Display a confirmation dialog before deleting
             echo '<script>';
             echo 'if(confirm("Are you sure you want to delete this message?")) {';
             echo '  window.location.href = "?confirmedDel=' . $frm_data['del'] . '";';
@@ -32,7 +30,7 @@
         }
     }
 
-    // Perform deletion if confirmed
+
     if (isset($_GET['confirmedDel'])) {
         $q = "DELETE FROM `user_message` WHERE `sr_no`=?";
         $values = [$_GET['confirmedDel']];

@@ -67,24 +67,24 @@
 
             $status = $booking_details['booking_status'];
 
-            // Email content
+            
             $subject = "Room Reservation Status Update";
             $message = "Your room reservation status is: $status";
 
-            // Create a new PHPMailer instance
+            
             $mail = new PHPMailer();
 
-            // Set SMTP settings
+      
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'johnjoven0@gmail.com'; // Your Gmail address
+            $mail->Username = 'johnjoven0@gmail.com'; 
             $mail->Password = 'gbqu fuax avcd xmpm
-            '; // Your Gmail password or App password if 2-step verification is enabled
-            $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 587; // TCP port to connect to
+            '; 
+            $mail->SMTPSecure = 'tls'; 
+            $mail->Port = 587; 
 
-            // Email content
+          
             $mail->setFrom('johnjoven0@gmail.com', 'John Joven Borromeo');
             $mail->addAddress($recipient_email);
             $mail->Subject = $subject;
@@ -154,8 +154,7 @@
 
                             foreach ($bookingsData as $row) {
                                 echo "<tr>";
-                                // Display data in table cells
-                                // Adjust the keys based on your database structure
+                                
                                 echo "<td>" . $row['booking_id'] . "</td>";
                                 echo "<td>" . $row['customer_name'] . "</td>";
                                 echo "<td>" . $row['room_id'] . "</td>";
@@ -168,10 +167,9 @@
                                 echo '<form method="POST" action="">';
                                 echo '<input type="hidden" name="booking_id" value="' . $row['booking_id'] . '">';
                     
-                                // Delete button
                                 echo '<button type="submit" name="delete_user" class="btn btn-danger btn-sm ms-2">Delete</button>';
                     
-                                // Dropdown for selecting status
+                              
                                 echo '<select name="selected_status" class="ms-2 p-1 mt-1">';
                                 echo '<option value="Pending">Pending</option>';
                                 echo '<option value="Confirmed">Confirmed</option>';
@@ -210,13 +208,12 @@
                     </table>
                     <div class="text-center">
                         <?php
-                        // Count total number of rows
+                        
                         $count_query = "SELECT COUNT(*) AS total FROM users";
                         $count_result = mysqli_query($con, $count_query);
                         $row = mysqli_fetch_assoc($count_result);
                         $total_pages = ceil($row['total'] / $results_per_page);
 
-                        // Display pagination links
                         for ($page = 1; $page <= $total_pages; $page++) {
                             echo '<a href="?page=' . $page . '" class="btn btn-primary btn-sm m-1">' . $page . '</a>';
                         }
