@@ -23,23 +23,21 @@
   <?php require('inc/header_index.php'); ?>
 
   <style>
-    /* Adjust the position of the alert */
     .custom-alert {
         position: fixed;
         top: 20px;
         right: 20px;
-        z-index: 1000; /* To make sure it's on top of other elements */
+        z-index: 1000; 
     }
 
     .navbar {
-        z-index: 900; /* Lower z-index than the alert */
+        z-index: 900; 
     }
 
-    /* Customize the alert to make it small */
     .custom-alert .alert {
-        padding: 5px 10px; /* Adjust padding */
-        font-size: 14px; /* Adjust font size */
-        border-radius: 4px; /* Add border radius */
+        padding: 5px 10px; 
+        font-size: 14px;
+        border-radius: 4px;
     }
 </style>
 

@@ -45,8 +45,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                 <?php
                   if (isset($_SESSION['username'])) {
                     $username = $_SESSION['username'];
-                
-                    // Query to fetch booking details for the logged-in user from 'bookings' and 'users' tables
                     $query = "SELECT b.* FROM bookings b JOIN users u ON b.customer_name = u.firstname WHERE u.username = ?";
                     
                     $stmt = $con->prepare($query);
@@ -59,7 +57,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
                         if ($result->num_rows > 0) {
                             echo '<h5 class="mb-3 mt-2 fw-bold" style="font-size: 20px;">Booked Details</h5>';
                             while ($row = $result->fetch_assoc()) {
-                                // Display booked details in the container
+                               
                                 echo '<p>Customer Name: ' . $row['customer_name'] . '</p>';
                                 echo '<p>Room Number: ' . $row['room_id'] . '</p>';
                                 echo '<p>Check-In Date: ' . $row['check_in_date'] . '</p>';
@@ -389,8 +387,7 @@ if (isset($_POST['refund'])) {
         $frm_data['e_mail']
     ];
 
-    $stmtinsert->execute($values); // Execute the prepared statement directly
-
+    $stmtinsert->execute($values); 
     if ($stmtinsert->affected_rows > 0) {
         echo "<script>
             const Toast = Swal.mixin({
