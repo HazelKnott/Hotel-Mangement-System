@@ -54,6 +54,15 @@ if (isset($_POST['login'])) {
   <title>Tranquil Hotel</title>
   <?php require('inc/links.php') ?>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      
+      background-image: url('images/bg.png');
+      background-size: cover;
+      background-position: center;
+      
+    }
         div.login-form {
             position: absolute;
             top: 50%;
@@ -67,12 +76,12 @@ if (isset($_POST['login'])) {
 
     <div class="login-form text-center rounded bg-white shadow overflow-hidden">
         <form method="POST">
-            <h4 class="bg-dark text-white py-3">LOGIN</h4>
+            <h4 class="bg-info text-white py-3">LOGIN</h4>
             <div class="mb-3 px-2">
-                <button name="login" type="button" class="btn btn-danger custom-bg shadow-none mb-3 " data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</button>
+                <button name="login" type="button" class="btn btn-secondary custom-bg shadow-none mb-3 " data-bs-toggle="modal" data-bs-target="#loginModal">LOGIN</button>
             </div>
             <div class="mb-4 px-2">
-                 <button name="create" type="button" class="btn btn-danger custom-bg shadow-none mb-3 " data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button>
+                 <button name="create" type="button" class="btn btn-secondary custom-bg shadow-none mb-3 " data-bs-toggle="modal" data-bs-target="#registerModal">REGISTER</button>
             </div>
         </form>
     </div>
@@ -99,7 +108,7 @@ if (isset($_POST['login'])) {
             <input type="password" class="form-control border border-dark" id="password" name="password">
           </div>
           <div class="mb-5 d-flex justify-content-between align-items-center">
-            <button type="submit" name="login" class="btn btn-primary">Login</button>
+            <button type="submit" name="login" class="btn btn-info text-white">Login</button>
             <a href="javascript: void(0)">Forgot Password</a>
           </div>
         </form>
@@ -149,7 +158,7 @@ if (isset($_POST['login'])) {
               </div>
             </div>
             <div class="text-center my-1">
-              <button name="create" type="submit" class="btn btn-primary" href="loginpage.php">Register</button>
+              <button name="create" type="submit" class="btn btn-info text-white" href="loginpage.php">Register</button>
             </div>
           </form>
         </div>

@@ -5,13 +5,13 @@ function displayUserInfo($firstName, $lastName)
     if (!empty($firstName) && !empty($lastName)) {
         echo '<div class="d-flex align-items-center me-3">';
         echo '<span class="me-2">Welcome, ' . $firstName . ' ' . $lastName . '</span>';
-        echo '<a href="logout.php" class="btn btn-light btn-sm">Log-out</a>';
+        echo '<a href="logout.php" class="btn btn-light btn-outline-dark btn-sm">Log-out</a>';
         echo '</div>';
     }
 }
 
 $firstName = 'Hazel';
-$lastName = 'Lobe';
+$lastName = 'Lobi';
 $username = '';
 
 if (isset($_GET['username'])) {
