@@ -141,7 +141,7 @@ if (isset($_POST['refund'])) {
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                <img src="images/rooms/room 104.jpg" class="img-fluid rounded">
+                <img src="images/rooms/room104.jpg" class="img-fluid rounded">
               </div>
               <div class="col-md-5 px-lg-3 px-md-3 px-0">
 
@@ -258,7 +258,7 @@ if (isset($_POST['refund'])) {
           <div class="card mb-3 mb-4 border-0 shadow">
             <div class="row g-0 p-4 align-items-center">
               <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                <img src="images/rooms/room 101.jpg" class="img-fluid rounded">
+                <img src="images/rooms/room101.jpg" class="img-fluid rounded">
               </div>
               <div class="col-md-5 px-lg-3 px-md-3 px-0">
 

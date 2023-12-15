@@ -145,7 +145,7 @@ if (!isset($_SESSION['username'])) {
     <div class="row">
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card border-0 shadow" style="max-width: 400px; margin: auto;">
-          <img src="images/rooms/room 101.jpg" class="card-img-top" alt="...">
+          <img src="images/rooms/room101.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5>Room Name</h5>
             <h6>____ Per Night</h6>
@@ -235,7 +235,7 @@ if (!isset($_SESSION['username'])) {
       </div>
       <div class="col-lg-4 col-md-6 my-3">
         <div class="card border-0 shadow" style="max-width: 400px; margin: auto;">
-          <img src="images/rooms/room 103.jpg" class="card-img-top" alt="...">
+          <img src="images/rooms/room103.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5>Room Name</h5>
             <h6>____ Per Night</h6>
